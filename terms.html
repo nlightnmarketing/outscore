@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Outscore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Terms Page Specific Styles */
+        .terms-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .terms-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .terms-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .terms-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .terms-effective {
+            font-size: 0.9375rem;
+            color: var(--orange-color);
+            font-weight: 600;
+        }
+
+        /* Terms Content */
+        .terms-content {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .terms-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-radius: 24px;
+            padding: var(--spacing-xl);
+            border: 2px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08);
+        }
+
+        .terms-section {
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terms-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .terms-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .terms-section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .terms-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .terms-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .terms-list li {
+            padding: var(--spacing-xs) 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        .terms-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--orange-color);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .terms-highlight {
+            background: linear-gradient(135deg, rgba(255, 217, 61, 0.2) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--orange-color);
+            padding: var(--spacing-md);
+            border-radius: 0 12px 12px 0;
+            margin: var(--spacing-md) 0;
+        }
+
+        .terms-highlight-text {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .terms-important {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .terms-important-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terms-important-text {
+            font-size: 0.9375rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .terms-contact-card {
+            background: linear-gradient(135deg, #2D1B69 0%, #4A2C8A 100%);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            color: white;
+        }
+
+        .terms-contact-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .terms-contact-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .terms-contact-link {
+            color: var(--yellow-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .terms-contact-link:hover {
+            color: var(--orange-color);
+            text-decoration: underline;
+        }
+
+        /* Table of Contents */
+        .terms-toc {
+            background: linear-gradient(135deg, rgba(243, 237, 255, 0.5) 0%, rgba(255, 249, 230, 0.5) 100%);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .terms-toc-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .terms-toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xs);
+        }
+
+        .terms-toc-list li {
+            font-size: 0.9375rem;
+        }
+
+        .terms-toc-list a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terms-toc-list a:hover {
+            color: var(--orange-color);
+        }
+
+        .terms-toc-list a::before {
+            content: "→";
+            color: var(--purple-color);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-title {
+                font-size: 2.25rem;
+            }
+
+            .terms-section-title {
+                font-size: 1.25rem;
+            }
+
+            .terms-card {
+                padding: var(--spacing-md);
+            }
+
+            .terms-toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#courses" class="nav-link">Courses</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Terms Hero -->
+    <section class="terms-hero">
+        <div class="terms-container">
+            <h1 class="terms-title">Terms and Conditions</h1>
+            <p class="terms-subtitle">Please read these terms carefully before using our services</p>
+            <p class="terms-effective">Effective Date: December 29, 2025</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="terms-container">
+            <div class="terms-card">
+                <!-- Table of Contents -->
+                <div class="terms-toc">
+                    <h2 class="terms-toc-title">Table of Contents</h2>
+                    <ul class="terms-toc-list">
+                        <li><a href="#acceptance">Acceptance of Terms</a></li>
+                        <li><a href="#description">Service Description</a></li>
+                        <li><a href="#eligibility">Eligibility & Registration</a></li>
+                        <li><a href="#free-trial">Free Trial</a></li>
+                        <li><a href="#subscription">Subscription & Payment</a></li>
+                        <li><a href="#content">Content & Intellectual Property</a></li>
+                        <li><a href="#conduct">User Conduct</a></li>
+                        <li><a href="#privacy">Privacy & Data Protection</a></li>
+                        <li><a href="#disclaimers">Disclaimers & Limitations</a></li>
+                        <li><a href="#termination">Termination</a></li>
+                        <li><a href="#changes">Changes to Terms</a></li>
+                        <li><a href="#governing-law">Governing Law</a></li>
+                        <li><a href="#contact">Contact Information</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 1: Acceptance of Terms -->
+                <div class="terms-section" id="acceptance">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">1</span>
+                        Acceptance of Terms
+                    </h2>
+                    <p class="terms-text">
+                        Welcome to Outscore ("we," "our," or "us"). By accessing or using our website at outscore.in and our 
+                        educational services (collectively, the "Service"), you agree to be bound by these Terms and Conditions ("Terms"). 
+                        If you do not agree to these Terms, please do not use our Service.
+                    </p>
+                    <p class="terms-text">
+                        These Terms constitute a legally binding agreement between you and Outscore. By creating an account, accessing 
+                        our platform, or using any part of our Service, you acknowledge that you have read, understood, and agree to 
+                        be bound by these Terms.
+                    </p>
+                    <div class="terms-highlight">
+                        <p class="terms-highlight-text">
+                            <strong>Important:</strong> If you are a parent or guardian registering on behalf of a minor, you accept 
+                            these Terms on their behalf and are responsible for their compliance with these Terms.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 2: Service Description -->
+                <div class="terms-section" id="description">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">2</span>
+                        Service Description
+                    </h2>
+                    <p class="terms-text">
+                        Outscore is an educational platform designed to help Grade 10 students prepare for board examinations. 
+                        Our Service includes:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Comprehensive courses in Mathematics, English, and Science (Physics, Chemistry, and Biology)</li>
+                        <li>500+ practice problems for Mathematics with detailed explanations</li>
+                        <li>Essay practice, grammar mastery modules, and writing feedback for English</li>
+                        <li>100+ instructional questions with detailed explanations for Science subjects</li>
+                        <li>AI-generated questions and assessments designed by education experts</li>
+                        <li>AI-powered analysis of tests and activities to generate insightful performance reports</li>
+                        <li>Progress tracking with detailed analytics and reports for parents</li>
+                        <li>Assessment tools to identify knowledge gaps</li>
+                    </ul>
+                    <p class="terms-text">
+                        We reserve the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
+                    </p>
+                </div>
+
+                <!-- Section 3: Eligibility & Registration -->
+                <div class="terms-section" id="eligibility">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">3</span>
+                        Eligibility & Account Registration
+                    </h2>
+                    <p class="terms-text">
+                        To use our Service, you must meet the following eligibility requirements:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Students must be enrolled in Grade 10 or equivalent academic level</li>
+                        <li>Users under 18 years of age must have parental or guardian consent</li>
+                        <li>Parents/guardians registering on behalf of minors must be at least 18 years old</li>
+                        <li>You must provide accurate and complete registration information</li>
+                        <li>You must have a valid email address and phone number for verification</li>
+                    </ul>
+                    <p class="terms-text">
+                        When creating an account, you agree to:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Provide accurate, current, and complete information during registration</li>
+                        <li>Maintain and promptly update your account information</li>
+                        <li>Keep your password secure and confidential</li>
+                        <li>Accept responsibility for all activities under your account</li>
+                        <li>Notify us immediately of any unauthorized use of your account</li>
+                    </ul>
+                    <div class="terms-important">
+                        <p class="terms-important-title">⚠️ Account Security</p>
+                        <p class="terms-important-text">
+                            You are solely responsible for maintaining the confidentiality of your account credentials. 
+                            Outscore will not be liable for any loss or damage arising from your failure to protect your account information.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 4: Free Trial -->
+                <div class="terms-section" id="free-trial">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">4</span>
+                        Free Trial
+                    </h2>
+                    <p class="terms-text">
+                        Outscore offers a 7-day free trial to new users, subject to the following terms:
+                    </p>
+                    <ul class="terms-list">
+                        <li><strong>Duration:</strong> The free trial period is exactly 7 (seven) days from the date of account activation</li>
+                        <li><strong>Limited Content:</strong> During the trial period, you will have access to a limited selection of our educational content, including sample lessons and practice questions</li>
+                        <li><strong>One Trial Per User:</strong> Each user is entitled to only one free trial. Multiple accounts created to obtain additional free trials are prohibited</li>
+                        <li><strong>No Payment Required:</strong> No payment information is required to start the free trial</li>
+                        <li><strong>Automatic Expiry:</strong> The free trial will automatically expire after 7 days unless you subscribe to a paid plan</li>
+                        <li><strong>Feature Restrictions:</strong> Some premium features, detailed analytics, and advanced content may not be available during the trial period</li>
+                    </ul>
+                    <div class="terms-highlight">
+                        <p class="terms-highlight-text">
+                            <strong>Trial Content Includes:</strong> Sample chapters from Mathematics, English, and Science courses; 
+                            limited practice problems; and introductory assessments to demonstrate our platform capabilities.
+                        </p>
+                    </div>
+                    <p class="terms-text">
+                        Upon expiry of the free trial, access to all trial content will be suspended until a paid subscription is activated. 
+                        Any progress made during the trial period will be saved and available upon subscription.
+                    </p>
+                </div>
+
+                <!-- Section 5: Subscription & Payment -->
+                <div class="terms-section" id="subscription">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">5</span>
+                        Subscription & Payment Terms
+                    </h2>
+                    <p class="terms-text">
+                        After the free trial period, continued access to Outscore requires a paid subscription:
+                    </p>
+                    <ul class="terms-list">
+                        <li><strong>Subscription Period:</strong> Subscriptions are billed on a monthly basis</li>
+                        <li><strong>Payment Methods:</strong> We accept major credit cards, debit cards, UPI, net banking, and other payment methods as available on our platform</li>
+                        <li><strong>Billing Cycle:</strong> Your subscription will be billed at the beginning of each monthly cycle</li>
+                        <li><strong>Price Changes:</strong> We reserve the right to change subscription prices with 30 days' notice to existing subscribers</li>
+                        <li><strong>Taxes:</strong> All prices are inclusive of applicable taxes unless otherwise stated</li>
+                    </ul>
+                    
+                    <p class="terms-text"><strong>Refund Policy:</strong></p>
+                    <ul class="terms-list">
+                        <li>Subscription fees are generally non-refundable once the billing cycle has begun</li>
+                        <li>Refund requests within 7 days of initial paid subscription may be considered on a case-by-case basis</li>
+                        <li>No refunds will be provided for partial months or unused portions of the subscription</li>
+                        <li>Technical issues preventing access may qualify for pro-rata refunds at our discretion</li>
+                    </ul>
+
+                    <p class="terms-text"><strong>Cancellation:</strong></p>
+                    <ul class="terms-list">
+                        <li>You may cancel your subscription at any time through your account settings</li>
+                        <li>Cancellation will take effect at the end of the current billing period</li>
+                        <li>You will retain access to the Service until the end of your paid period</li>
+                        <li>No refunds will be issued for early cancellation</li>
+                    </ul>
+
+                    <div class="terms-important">
+                        <p class="terms-important-title">💳 Payment Security</p>
+                        <p class="terms-important-text">
+                            All payment transactions are processed through secure, PCI-compliant payment gateways. 
+                            We do not store your complete payment card details on our servers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 6: Content & Intellectual Property -->
+                <div class="terms-section" id="content">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">6</span>
+                        Content & Intellectual Property
+                    </h2>
+                    <p class="terms-text">
+                        All content available through the Service, including but not limited to text, graphics, logos, images, 
+                        audio clips, video clips, data compilations, software, and educational materials (collectively, "Content"), 
+                        is the property of Outscore or its content suppliers and is protected by Indian and international 
+                        copyright, trademark, and other intellectual property laws.
+                    </p>
+                    
+                    <p class="terms-text"><strong>Your Rights:</strong></p>
+                    <ul class="terms-list">
+                        <li>You are granted a limited, non-exclusive, non-transferable license to access and use the Content for personal, non-commercial educational purposes only</li>
+                        <li>You may view, download, and print Content solely for your own learning use</li>
+                    </ul>
+
+                    <p class="terms-text"><strong>Restrictions:</strong></p>
+                    <ul class="terms-list">
+                        <li>You may not reproduce, distribute, modify, create derivative works, publicly display, or commercially exploit any Content without our express written permission</li>
+                        <li>You may not share your account credentials or allow others to access your account</li>
+                        <li>You may not use any automated systems to download or scrape Content from our platform</li>
+                        <li>You may not reverse engineer, decompile, or disassemble any software or technology used in the Service</li>
+                        <li>You may not remove any copyright, trademark, or other proprietary notices from the Content</li>
+                    </ul>
+
+                    <p class="terms-text"><strong>User-Generated Content:</strong></p>
+                    <p class="terms-text">
+                        Any content you submit through the Service (such as questions, feedback, or assessments) grants us a 
+                        non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, and distribute 
+                        such content for improving our Service.
+                    </p>
+                </div>
+
+                <!-- Section 7: User Conduct -->
+                <div class="terms-section" id="conduct">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">7</span>
+                        User Conduct
+                    </h2>
+                    <p class="terms-text">
+                        When using our Service, you agree to conduct yourself appropriately and not engage in any prohibited activities:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Use the Service only for lawful educational purposes</li>
+                        <li>Not impersonate any person or entity or misrepresent your affiliation</li>
+                        <li>Not upload or transmit viruses, malware, or other harmful code</li>
+                        <li>Not attempt to gain unauthorized access to any part of the Service</li>
+                        <li>Not interfere with or disrupt the Service or servers/networks connected to the Service</li>
+                        <li>Not use the Service to harass, abuse, or harm others</li>
+                        <li>Not share account credentials with others or create multiple accounts</li>
+                        <li>Not engage in any activity that violates any applicable law or regulation</li>
+                        <li>Not attempt to manipulate or exploit any systems or features of the Service</li>
+                    </ul>
+                    <p class="terms-text">
+                        Violation of these conduct rules may result in immediate suspension or termination of your account 
+                        without refund.
+                    </p>
+                </div>
+
+                <!-- Section 8: Privacy & Data Protection -->
+                <div class="terms-section" id="privacy">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">8</span>
+                        Privacy & Data Protection
+                    </h2>
+                    <p class="terms-text">
+                        Your privacy is important to us. Our collection and use of personal information is governed by our 
+                        Privacy Policy, which is incorporated into these Terms by reference.
+                    </p>
+                    <p class="terms-text">
+                        By using our Service, you consent to:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Collection of personal information necessary to provide the Service</li>
+                        <li>Use of learning data to track progress and generate performance reports</li>
+                        <li>Storage of assessment results and progress data</li>
+                        <li>Communication via email or SMS regarding your account and Service updates</li>
+                        <li>Use of anonymized, aggregated data for improving our Service and content</li>
+                    </ul>
+                    <p class="terms-text">
+                        We are committed to protecting children's privacy and comply with applicable laws regarding the 
+                        collection of information from minors. Parents and guardians have the right to review and request 
+                        deletion of their child's personal information.
+                    </p>
+                    <div class="terms-important">
+                        <p class="terms-important-title">🔒 Data Security</p>
+                        <p class="terms-important-text">
+                            We implement industry-standard security measures to protect your personal information. 
+                            However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 9: Disclaimers & Limitations -->
+                <div class="terms-section" id="disclaimers">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">9</span>
+                        Disclaimers & Limitations of Liability
+                    </h2>
+                    <p class="terms-text"><strong>Service Disclaimer:</strong></p>
+                    <p class="terms-text">
+                        The Service is provided on an "AS IS" and "AS AVAILABLE" basis. Outscore makes no warranties, 
+                        express or implied, regarding the Service, including but not limited to:
+                    </p>
+                    <ul class="terms-list">
+                        <li>The accuracy, completeness, or reliability of any Content</li>
+                        <li>That the Service will be uninterrupted, timely, secure, or error-free</li>
+                        <li>That any specific academic results or exam scores will be achieved</li>
+                        <li>That the Service will meet your specific requirements or expectations</li>
+                    </ul>
+
+                    <p class="terms-text"><strong>Educational Disclaimer:</strong></p>
+                    <p class="terms-text">
+                        Outscore is a supplementary educational tool and is not a substitute for formal schooling, 
+                        classroom instruction, or professional tutoring. While we strive to provide high-quality 
+                        educational content, we do not guarantee any specific academic outcomes, grades, or examination results.
+                    </p>
+
+                    <p class="terms-text"><strong>Limitation of Liability:</strong></p>
+                    <p class="terms-text">
+                        To the maximum extent permitted by applicable law, Outscore and its directors, employees, partners, 
+                        and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive 
+                        damages, including but not limited to loss of profits, data, or academic opportunities, arising out 
+                        of or related to your use of the Service.
+                    </p>
+                    <p class="terms-text">
+                        Our total liability for any claims arising from these Terms or your use of the Service shall not 
+                        exceed the amount you have paid to us in the twelve (12) months preceding the claim.
+                    </p>
+                </div>
+
+                <!-- Section 10: Termination -->
+                <div class="terms-section" id="termination">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">10</span>
+                        Termination
+                    </h2>
+                    <p class="terms-text">
+                        <strong>Termination by You:</strong> You may terminate your account at any time by contacting us 
+                        or using the account settings feature. Upon termination, your right to use the Service will 
+                        immediately cease.
+                    </p>
+                    <p class="terms-text">
+                        <strong>Termination by Us:</strong> We reserve the right to suspend or terminate your account 
+                        and access to the Service at any time, without prior notice, for any reason, including but not limited to:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Violation of these Terms or any applicable law</li>
+                        <li>Conduct that we believe is harmful to other users or the Service</li>
+                        <li>Non-payment of subscription fees</li>
+                        <li>Extended periods of inactivity</li>
+                        <li>At our sole discretion for any other reason</li>
+                    </ul>
+                    <p class="terms-text">
+                        <strong>Effect of Termination:</strong> Upon termination, all licenses granted to you will 
+                        immediately terminate. You will lose access to all Content and your progress data. We are not 
+                        obligated to maintain or provide any data after account termination.
+                    </p>
+                </div>
+
+                <!-- Section 11: Changes to Terms -->
+                <div class="terms-section" id="changes">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">11</span>
+                        Changes to Terms
+                    </h2>
+                    <p class="terms-text">
+                        We reserve the right to modify these Terms at any time. When we make changes, we will:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Update the "Effective Date" at the top of these Terms</li>
+                        <li>Notify you via email or through a prominent notice on our platform</li>
+                        <li>For material changes, provide at least 30 days' notice before the new terms take effect</li>
+                    </ul>
+                    <p class="terms-text">
+                        Your continued use of the Service after any changes to these Terms constitutes your acceptance 
+                        of the new Terms. If you do not agree to the modified Terms, you must stop using the Service 
+                        and terminate your account.
+                    </p>
+                </div>
+
+                <!-- Section 12: Governing Law -->
+                <div class="terms-section" id="governing-law">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">12</span>
+                        Governing Law & Dispute Resolution
+                    </h2>
+                    <p class="terms-text">
+                        These Terms shall be governed by and construed in accordance with the laws of India, without 
+                        regard to its conflict of law provisions.
+                    </p>
+                    <p class="terms-text">
+                        Any disputes arising out of or relating to these Terms or the Service shall be subject to the 
+                        exclusive jurisdiction of the courts located in Bengaluru, Karnataka, India.
+                    </p>
+                    <p class="terms-text">
+                        Before initiating any legal proceedings, you agree to first attempt to resolve any dispute 
+                        informally by contacting us. We will try to resolve any disputes through good faith negotiations.
+                    </p>
+                </div>
+
+                <!-- Section 13: Contact Information -->
+                <div class="terms-section" id="contact">
+                    <h2 class="terms-section-title">
+                        <span class="terms-section-number">13</span>
+                        Contact Information
+                    </h2>
+                    <p class="terms-text">
+                        If you have any questions, concerns, or feedback regarding these Terms or our Service, 
+                        please contact us:
+                    </p>
+                    <div class="terms-contact-card">
+                        <h3 class="terms-contact-title">Outscore Support</h3>
+                        <p class="terms-contact-text">
+                            <strong>Website:</strong> <a href="https://outscore.in" class="terms-contact-link">outscore.in</a>
+                        </p>
+                        <p class="terms-contact-text">
+                            <strong>Email:</strong> <a href="mailto:info@nlightn.in" class="terms-contact-link">info@nlightn.in</a>
+                        </p>
+                        <p class="terms-contact-text">
+                            <strong>Contact Page:</strong> <a href="contact.html" class="terms-contact-link">Contact Us</a>
+                        </p>
+                        <p class="terms-contact-text" style="margin-top: 1rem; font-size: 0.9375rem;">
+                            We typically respond to inquiries within 24-48 business hours.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Final Statement -->
+                <div class="terms-highlight" style="margin-top: var(--spacing-lg);">
+                    <p class="terms-highlight-text">
+                        By using Outscore, you acknowledge that you have read, understood, and agree to be bound by 
+                        these Terms and Conditions. Thank you for choosing Outscore for your child's board exam preparation journey!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        Trusted by thousands of parents to help their children excel in 10th standard board examinations.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
