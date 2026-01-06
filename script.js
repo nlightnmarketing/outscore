@@ -52,11 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set active nav link based on scroll position
+    // Set active nav link based on scroll position (only for anchor links within the same page)
     const sections = document.querySelectorAll('section[id]');
-    const navLinksArray = Array.from(navLinks);
+    const anchorNavLinks = Array.from(navLinks).filter(link => link.getAttribute('href').startsWith('#'));
 
     function setActiveNavLink() {
+        // Only handle anchor links (starting with #), not page links like index.html
+        if (anchorNavLinks.length === 0) return;
+
         let current = '';
         const scrollY = window.pageYOffset;
 
@@ -70,22 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        navLinksArray.forEach(link => {
+        anchorNavLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
         });
-
-        // Set home as active if at top of page
-        if (scrollY < 100) {
-            navLinksArray.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === '/') {
-                    link.classList.add('active');
-                }
-            });
-        }
     }
 
     window.addEventListener('scroll', setActiveNavLink);

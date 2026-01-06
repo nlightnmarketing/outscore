@@ -1774,7 +1774,7 @@ body {
 
 .stat-label {
     font-size: 1.0625rem;
-    color: var(--primary-color);
+    color: var(--text-light);
     font-weight: 500;
 }
 
