@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes - Outscore</title>
+    <meta name="description" content="Comprehensive study notes and learning resources for 10th grade CBSE exams. Learn concepts, practice problems, and master your subjects with detailed explanations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Notes Landing Page Styles */
+        .notes-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notes-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .notes-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .notes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .notes-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .notes-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            line-height: 1.7;
+        }
+
+        /* Exam Selection Section */
+        .exam-selection-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .exam-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-radius: 24px;
+            padding: var(--spacing-xl);
+            border: 2px solid rgba(139, 92, 246, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .exam-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(45, 27, 105, 0.15);
+            border-color: var(--purple-color);
+            text-decoration: none;
+        }
+
+        .exam-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .exam-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .exam-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.5px;
+        }
+
+        .exam-description {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .exam-features {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-md) 0 0 0;
+        }
+
+        .exam-features li {
+            font-size: 0.9375rem;
+            color: var(--text-color);
+            padding: var(--spacing-xs) 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .exam-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+        }
+
+        .exam-cta {
+            margin-top: var(--spacing-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--orange-color);
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .exam-card:hover .exam-cta {
+            gap: 0.75rem;
+            color: var(--purple-color);
+        }
+
+        @media (max-width: 768px) {
+            .notes-title {
+                font-size: 2.5rem;
+            }
+
+            .exam-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="notes.html" class="nav-link active">Notes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Notes Hero -->
+    <section class="notes-hero">
+        <div class="notes-container">
+            <h1 class="notes-title">Study Notes & Learning Resources</h1>
+            <p class="notes-subtitle">
+                Comprehensive notes, detailed explanations, and concept breakdowns to help you master 
+                your subjects. Each note is designed to teach concepts clearly and aid your exam preparation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Free Trial CTA Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Improve Your Scores?</h2>
+                <p class="section-description">Start your free trial and discover exactly where you need to focus</p>
+            </div>
+            <div class="section-cta">
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank">Start Your Free Trial Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Selection Section -->
+    <section class="exam-selection-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Available Courses</span>
+                <h2 class="section-title">Select Your Grade</h2>
+                <p class="section-description">Choose your grade to access subject-wise notes and learning materials</p>
+            </div>
+            <div class="exam-grid">
+                <a href="notes/10th-grade.html" class="exam-card">
+                    <div class="exam-icon">📚</div>
+                    <h3 class="exam-name">10th Grade (CBSE)</h3>
+                    <p class="exam-description">
+                        Comprehensive study notes for CBSE 10th grade covering Mathematics, Science, 
+                        English, and more. Detailed explanations of concepts with examples and practice insights.
+                    </p>
+                    <ul class="exam-features">
+                        <li>Mathematics concepts and problem-solving</li>
+                        <li>Science topics with detailed explanations</li>
+                        <li>English grammar and comprehension</li>
+                        <li>Exam-focused content</li>
+                    </ul>
+                    <span class="exam-cta">View Notes →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Notes</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

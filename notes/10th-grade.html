@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th Grade CBSE Study Notes - Outscore</title>
+    <meta name="description" content="Comprehensive study notes for CBSE 10th grade. Learn Mathematics, Science, and English concepts with detailed explanations and examples.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* 10th Grade Notes Page Styles */
+        .grade-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grade-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .grade-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .grade-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grade-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .grade-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            line-height: 1.7;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        /* Notes Listing Section */
+        .notes-listing-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .subject-filter {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            border-color: transparent;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .note-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-radius: 20px;
+            padding: var(--spacing-lg);
+            border: 2px solid rgba(139, 92, 246, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .note-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(45, 27, 105, 0.15);
+            border-color: var(--purple-color);
+            text-decoration: none;
+        }
+
+        .note-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.375rem 0.875rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.3;
+        }
+
+        .note-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .note-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .note-difficulty {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .note-cta {
+            color: var(--orange-color);
+            font-weight: 700;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+
+        .note-card:hover .note-cta {
+            color: var(--purple-color);
+        }
+
+        @media (max-width: 768px) {
+            .grade-title {
+                font-size: 2.25rem;
+            }
+
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subject-filter {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../notes.html" class="nav-link active">Notes</a>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>10th Grade</span>
+        </div>
+    </div>
+
+    <!-- Grade Hero -->
+    <section class="grade-hero">
+        <div class="grade-container">
+            <h1 class="grade-title">10th Grade CBSE Study Notes</h1>
+            <p class="grade-subtitle">
+                Comprehensive notes covering all subjects with detailed explanations, examples, and 
+                concept breakdowns to help you excel in your board exams.
+            </p>
+        </div>
+    </section>
+
+    <!-- Free Trial CTA Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Improve Your Scores?</h2>
+                <p class="section-description">Start your free trial and discover exactly where you need to focus</p>
+            </div>
+            <div class="section-cta">
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank">Start Your Free Trial Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Listing Section -->
+    <section class="notes-listing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Available Notes</span>
+                <h2 class="section-title">Mathematics Notes</h2>
+                <p class="section-description">Detailed explanations of mathematical concepts with examples and practice insights</p>
+            </div>
+
+            <div class="notes-grid">
+                <a href="10th-grade/arithmetic-progressions-introduction.html" class="note-card">
+                    <div class="note-meta">
+                        <span class="note-tag">Mathematics</span>
+                        <span class="note-tag">Arithmetic Progressions</span>
+                        <span class="note-tag">Easy</span>
+                    </div>
+                    <h3 class="note-title">Arithmetic Progressions: Introduction and Definition</h3>
+                    <p class="note-description">
+                        Learn what an Arithmetic Progression (AP) is, understand the concept of common difference, 
+                        and explore real-life examples. This note covers the fundamental definition and properties 
+                        of APs with clear explanations and examples.
+                    </p>
+                    <div class="note-footer">
+                        <span class="note-difficulty">Difficulty: Easy</span>
+                        <span class="note-cta">Read More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Notes Section -->
+    <section class="notes-listing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Available Notes</span>
+                <h2 class="section-title">Science Notes</h2>
+                <p class="section-description">Comprehensive explanations of science concepts with examples and practical applications</p>
+            </div>
+
+            <div class="notes-grid">
+                <a href="10th-grade/acids-bases-indicators-introduction.html" class="note-card">
+                    <div class="note-meta">
+                        <span class="note-tag">Science</span>
+                        <span class="note-tag">Chemistry</span>
+                        <span class="note-tag">Acids, Bases and Salts</span>
+                        <span class="note-tag">Easy</span>
+                    </div>
+                    <h3 class="note-title">Acids, Bases and Salts: Introduction to Indicators</h3>
+                    <p class="note-description">
+                        Learn about chemical indicators including litmus, phenolphthalein, natural indicators like turmeric 
+                        and red cabbage, and olfactory indicators. Understand how to identify acids and bases safely using 
+                        color changes and odour changes.
+                    </p>
+                    <div class="note-footer">
+                        <span class="note-difficulty">Difficulty: Easy</span>
+                        <span class="note-cta">Read More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../notes.html">Notes</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+

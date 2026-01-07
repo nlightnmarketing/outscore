@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Progressions: Introduction and Definition - 10th Grade CBSE Notes | Outscore</title>
+    <meta name="description" content="Learn Arithmetic Progressions (AP) for CBSE 10th grade. Understand the definition, common difference, and real-life examples. Complete guide with examples and explanations.">
+    <meta name="keywords" content="arithmetic progressions, AP, common difference, 10th grade CBSE, mathematics, class 10, CBSE notes, arithmetic sequence">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Note Page Styles */
+        .note-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .note-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .note-content-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .note-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-block {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--yellow-color);
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-block ul,
+        .content-block ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .content-block li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(45, 27, 105, 0.08);
+        }
+
+        .example-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .example-box p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .key-points h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--gradient-yellow);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .note-title {
+                font-size: 2.25rem;
+            }
+
+            .content-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.25rem;
+            }
+
+            .content-block p,
+            .content-block ul,
+            .content-block ol {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../notes.html" class="nav-link active">Notes</a>
+                <a href="../../about.html" class="nav-link">About</a>
+                <a href="../../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../10th-grade.html">10th Grade</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Mathematics</span>
+            <span class="breadcrumb-separator">/</span>
+            <span>Arithmetic Progressions</span>
+        </div>
+    </div>
+
+    <!-- Note Hero -->
+    <section class="note-hero">
+        <div class="note-container">
+            <div class="note-meta">
+                <span class="note-tag">Mathematics</span>
+                <span class="note-tag">Arithmetic Progressions</span>
+                <span class="note-tag">Class 10 CBSE</span>
+                <span class="note-tag">Easy</span>
+            </div>
+            <h1 class="note-title">Arithmetic Progressions: Introduction and Definition</h1>
+            <p class="note-subtitle">
+                Welcome! In this chapter, we'll explore Arithmetic Progressions (AP) - a fascinating pattern 
+                that appears everywhere in our daily lives, from salary increments to savings plans!
+            </p>
+        </div>
+    </section>
+
+    <!-- Note Content -->
+    <section class="note-content-section">
+        <div class="note-content">
+            <!-- What is an AP -->
+            <div class="content-block">
+                <h2>What is an Arithmetic Progression?</h2>
+                <p>
+                    An <strong>arithmetic progression</strong> is a list of numbers in which each term is obtained 
+                    by adding a <strong>FIXED NUMBER</strong> to the preceding term (except the first term).
+                </p>
+                <p>
+                    This fixed number is called the <strong>COMMON DIFFERENCE (d)</strong>.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        The common difference can be positive, negative, or even zero!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Real-life Examples -->
+            <div class="content-block">
+                <h2>Real-life Examples of Arithmetic Progressions</h2>
+                <p>
+                    Arithmetic progressions are all around us! Here are some everyday examples that will help 
+                    you understand this concept better:
+                </p>
+                
+                <div class="example-box">
+                    <h4>Example 1: Reena's Salary</h4>
+                    <p><strong>Sequence:</strong> ₹8000, ₹8500, ₹9000, ₹9500, ...</p>
+                    <p><strong>Common Difference:</strong> Each month, Reena's salary increases by ₹500</p>
+                    <p><strong>Pattern:</strong> d = 8500 - 8000 = 500 (positive, so the sequence is increasing)</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Ladder Rungs</h4>
+                    <p><strong>Sequence:</strong> 45 cm, 43 cm, 41 cm, 39 cm, ...</p>
+                    <p><strong>Common Difference:</strong> Each rung is 2 cm shorter than the previous one</p>
+                    <p><strong>Pattern:</strong> d = 43 - 45 = -2 (negative, so the sequence is decreasing)</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Shakila's Savings</h4>
+                    <p><strong>Sequence:</strong> ₹100, ₹150, ₹200, ₹250, ₹300, ...</p>
+                    <p><strong>Common Difference:</strong> Shakila adds ₹50 to her savings each year</p>
+                    <p><strong>Pattern:</strong> d = 150 - 100 = 50 (positive, so savings are growing)</p>
+                </div>
+
+                <p>
+                    In each case, notice that the <strong>difference between consecutive terms is constant</strong>. 
+                    This is the key characteristic of an arithmetic progression!
+                </p>
+            </div>
+
+            <!-- Free Trial CTA Section -->
+            <div class="content-block" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%); border-radius: 20px; padding: var(--spacing-xl); border: 2px solid rgba(139, 92, 246, 0.15); box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08); text-align: center; margin: var(--spacing-xl) 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Ready to Improve Your Scores?</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-md);">Start your free trial and discover exactly where you need to focus</p>
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: var(--spacing-md); padding: 1.25rem 2.5rem; background: var(--gradient-purple); color: var(--bg-white); text-decoration: none; border-radius: 14px; font-size: 1.0625rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);">Start Your Free Trial Today</a>
+            </div>
+
+            <!-- More Examples -->
+            <div class="content-block">
+                <h2>More Examples of Arithmetic Progressions</h2>
+                <p>Let's look at various types of APs to understand the concept better:</p>
+                
+                <ul>
+                    <li><strong>1, 2, 3, 4, 5, ...</strong> → d = 1 (increasing AP)</li>
+                    <li><strong>100, 70, 40, 10, -20, ...</strong> → d = -30 (decreasing AP)</li>
+                    <li><strong>-3, -2, -1, 0, 1, ...</strong> → d = 1 (can start with negative numbers)</li>
+                    <li><strong>3, 3, 3, 3, 3, ...</strong> → d = 0 (constant sequence - all terms are equal)</li>
+                    <li><strong>-1.0, -1.5, -2.0, -2.5, ...</strong> → d = -0.5 (can have decimal differences)</li>
+                </ul>
+
+                <div class="formula-box">
+                    <p>Each term = Previous term + Common difference</p>
+                </div>
+            </div>
+
+            <!-- Understanding Common Difference -->
+            <div class="content-block">
+                <h2>Understanding Common Difference</h2>
+                <p>
+                    The common difference (d) is the most important property of an arithmetic progression. 
+                    It tells us how the sequence is changing.
+                </p>
+
+                <h3>How to Find Common Difference</h3>
+                <p>
+                    To find the common difference, subtract any term from the term that comes after it:
+                </p>
+                <div class="formula-box">
+                    <p>d = a₂ - a₁ = a₃ - a₂ = a₄ - a₃ = ...</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Finding Common Difference</h4>
+                    <p><strong>Given AP:</strong> 100, 70, 40, 10, ...</p>
+                    <p><strong>Calculation:</strong> d = 70 - 100 = -30</p>
+                    <p><strong>Verification:</strong></p>
+                    <ul>
+                        <li>100 + (-30) = 70 ✓</li>
+                        <li>70 + (-30) = 40 ✓</li>
+                        <li>40 + (-30) = 10 ✓</li>
+                    </ul>
+                    <p><strong>Note:</strong> A negative common difference means the AP is decreasing!</p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="content-block">
+                <div class="key-points">
+                    <h4>Key Points to Remember</h4>
+                    <ul>
+                        <li><strong>AP</strong> = Arithmetic Progression</li>
+                        <li><strong>Common difference (d)</strong> = Any term - Its preceding term</li>
+                        <li><strong>d can be:</strong>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>Positive (increasing AP) - numbers get larger</li>
+                                <li>Negative (decreasing AP) - numbers get smaller</li>
+                                <li>Zero (constant AP) - all numbers are the same</li>
+                            </ul>
+                        </li>
+                        <li>Each number in an AP is called a <strong>TERM</strong></li>
+                        <li>To know an AP completely, you need both:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>The <strong>first term (a)</strong></li>
+                                <li>The <strong>common difference (d)</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="content-block">
+                <h2>Common Mistakes to Avoid</h2>
+                
+                <div class="example-box">
+                    <h4>Mistake 1: Confusing AP with Geometric Progression (GP)</h4>
+                    <p><strong>Wrong:</strong> "AP is where we multiply by a fixed number"</p>
+                    <p><strong>Correct:</strong> In AP, we <strong>ADD</strong> a fixed number. GP involves multiplication.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 2: Ignoring the Sign of Common Difference</h4>
+                    <p><strong>Wrong:</strong> For 100, 70, 40, 10, ... saying d = 30</p>
+                    <p><strong>Correct:</strong> d = -30 (negative because the sequence is decreasing)</p>
+                    <p>Always check: d = next term - previous term</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 3: Confusing Terms with Common Difference</h4>
+                    <p><strong>Wrong:</strong> In 100, 70, 40, 10, ... saying d = 70</p>
+                    <p><strong>Correct:</strong> 70 is a term, not the common difference. d = 70 - 100 = -30</p>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-block">
+                <h2>Summary</h2>
+                <p>
+                    Great start! You now understand what an Arithmetic Progression is and what common difference means. 
+                    Here's what we've learned:
+                </p>
+                <ul>
+                    <li>An AP is a sequence where each term is obtained by adding a fixed number (common difference) to the previous term</li>
+                    <li>The common difference can be positive, negative, or zero</li>
+                    <li>Real-life examples include salary increments, savings plans, and many other patterns</li>
+                    <li>To identify an AP, check if the difference between consecutive terms is constant</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../notes.html">Notes</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
