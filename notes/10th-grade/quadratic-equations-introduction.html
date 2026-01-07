@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equations: Introduction and Definition - 10th Grade CBSE Notes | Outscore</title>
+    <meta name="description" content="Learn about quadratic equations for CBSE 10th grade. Understand the standard form ax² + bx + c = 0, why a ≠ 0, and how to identify quadratic equations with examples.">
+    <meta name="keywords" content="quadratic equations, standard form, algebra, mathematics, 10th grade CBSE, class 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Note Page Styles */
+        .note-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .note-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .note-content-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .note-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-block {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--yellow-color);
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-block ul,
+        .content-block ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .content-block li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(45, 27, 105, 0.08);
+        }
+
+        .example-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .example-box p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .key-points h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--gradient-yellow);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .info-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .note-title {
+                font-size: 2.25rem;
+            }
+
+            .content-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.25rem;
+            }
+
+            .content-block p,
+            .content-block ul,
+            .content-block ol {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../notes.html" class="nav-link active">Notes</a>
+                <a href="../../about.html" class="nav-link">About</a>
+                <a href="../../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../10th-grade.html">10th Grade</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Mathematics</span>
+            <span class="breadcrumb-separator">/</span>
+            <span>Quadratic Equations</span>
+        </div>
+    </div>
+
+    <!-- Note Hero -->
+    <section class="note-hero">
+        <div class="note-container">
+            <div class="note-meta">
+                <span class="note-tag">Mathematics</span>
+                <span class="note-tag">Algebra</span>
+                <span class="note-tag">Quadratic Equations</span>
+                <span class="note-tag">Class 10 CBSE</span>
+                <span class="note-tag">Easy</span>
+            </div>
+            <h1 class="note-title">Quadratic Equations: Introduction and Definition</h1>
+            <p class="note-subtitle">
+                Welcome! In this chapter, we'll explore Quadratic Equations - one of the most important topics in algebra. 
+                These equations appear in many real-life situations, from calculating areas to solving physics problems!
+            </p>
+        </div>
+    </section>
+
+    <!-- Note Content -->
+    <section class="note-content-section">
+        <div class="note-content">
+            <!-- Standard Form -->
+            <div class="content-block">
+                <h2>Standard Form of a Quadratic Equation</h2>
+                <p>
+                    A <strong>quadratic equation in variable x</strong> is an equation of the form:
+                </p>
+                <div class="formula-box">
+                    <p>ax² + bx + c = 0</p>
+                </div>
+                <p>
+                    Where:
+                </p>
+                <ul>
+                    <li><strong>a, b, c</strong> are real numbers</li>
+                    <li><strong>a ≠ 0</strong> (this is crucial!)</li>
+                </ul>
+                <p>
+                    This is called the <strong>STANDARD FORM</strong> of a quadratic equation.
+                </p>
+            </div>
+
+            <!-- Why a ≠ 0 -->
+            <div class="content-block">
+                <h2>Why Must a ≠ 0?</h2>
+                <p>
+                    The condition <strong>a ≠ 0</strong> is essential. Here's why:
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        If <strong>a = 0</strong>, then ax² + bx + c becomes <strong>bx + c</strong>, which is a 
+                        <strong>LINEAR equation</strong>, not quadratic!
+                    </p>
+                </div>
+                <p>
+                    The term <strong>'quadratic'</strong> comes from <strong>'quad'</strong> meaning square - referring 
+                    to the x² term. Without the x² term (when a = 0), the equation is no longer quadratic.
+                </p>
+                <div class="example-box">
+                    <h4>Example</h4>
+                    <p>
+                        If we have: <strong>0x² + 3x - 5 = 0</strong><br>
+                        This simplifies to: <strong>3x - 5 = 0</strong><br>
+                        This is a <strong>linear equation</strong> (degree 1), not a quadratic equation (degree 2).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="content-block">
+                <h2>Examples of Quadratic Equations</h2>
+                <p>
+                    Here are some examples of quadratic equations in standard form:
+                </p>
+
+                <div class="example-box">
+                    <h4>Example 1</h4>
+                    <p><strong>Equation:</strong> 2x² + x - 300 = 0</p>
+                    <p>
+                        <strong>Coefficients:</strong> a = 2, b = 1, c = -300<br>
+                        Since a = 2 ≠ 0, this is a valid quadratic equation.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2</h4>
+                    <p><strong>Equation:</strong> x² - 45x + 324 = 0</p>
+                    <p>
+                        <strong>Coefficients:</strong> a = 1, b = -45, c = 324<br>
+                        Note: When the coefficient of x² is 1, we often write it as x² (not 1x²).
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Rearranging to Standard Form</h4>
+                    <p><strong>Given:</strong> 4x - 3x² + 2 = 0</p>
+                    <p>
+                        This is not in standard form. Let's rearrange it:
+                    </p>
+                    <p>
+                        <strong>Step 1:</strong> Write terms in descending order of powers<br>
+                        <strong>-3x² + 4x + 2 = 0</strong>
+                    </p>
+                    <p>
+                        <strong>Coefficients:</strong> a = -3, b = 4, c = 2<br>
+                        <strong>Note:</strong> We can always rearrange equations to get the standard form!
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h4>Important Note</h4>
+                    <p>
+                        When identifying coefficients, always make sure the equation is in standard form 
+                        (ax² + bx + c = 0) first. Rearrange if necessary!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Free Trial CTA Section -->
+            <div class="content-block" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%); border-radius: 20px; padding: var(--spacing-xl); border: 2px solid rgba(139, 92, 246, 0.15); box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08); text-align: center; margin: var(--spacing-xl) 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Ready to Improve Your Scores?</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-md);">Start your free trial and discover exactly where you need to focus</p>
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: var(--spacing-md); padding: 1.25rem 2.5rem; background: var(--gradient-purple); color: var(--bg-white); text-decoration: none; border-radius: 14px; font-size: 1.0625rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);">Start Your Free Trial Today</a>
+            </div>
+
+            <!-- Understanding Standard Form -->
+            <div class="content-block">
+                <h2>Understanding the Standard Form</h2>
+                <p>
+                    The standard form <strong>ax² + bx + c = 0</strong> has specific requirements:
+                </p>
+                <ul>
+                    <li><strong>a ≠ 0</strong> - This ensures the equation is quadratic (degree 2)</li>
+                    <li><strong>b and c can be zero</strong> - For example:
+                        <ul>
+                            <li>x² = 0 (where a = 1, b = 0, c = 0) is a quadratic equation</li>
+                            <li>x² - 4 = 0 (where a = 1, b = 0, c = -4) is a quadratic equation</li>
+                        </ul>
+                    </li>
+                    <li>The <strong>highest power</strong> of the variable must be <strong>2</strong></li>
+                    <li>All coefficients (a, b, c) are <strong>real numbers</strong></li>
+                </ul>
+            </div>
+
+            <!-- Practical Examples -->
+            <div class="content-block">
+                <h2>Understanding Through Examples</h2>
+                
+                <div class="example-box">
+                    <h4>Example 1: Standard Form</h4>
+                    <p><strong>Question:</strong> What is the standard form of a quadratic equation?</p>
+                    <p><strong>Answer:</strong> <strong>ax² + bx + c = 0, where a ≠ 0</strong></p>
+                    <p>
+                        <strong>Explanation:</strong> The standard form is ax² + bx + c = 0, where a, b, c are real 
+                        numbers and a ≠ 0. The condition a ≠ 0 ensures the equation is truly quadratic (degree 2). 
+                        Remember:
+                    </p>
+                    <ul>
+                        <li>ax + b = 0 is <strong>linear</strong> (degree 1), not quadratic</li>
+                        <li>ax³ + bx² + cx + d = 0 is <strong>cubic</strong> (degree 3), not quadratic</li>
+                        <li>Only a ≠ 0 is required; b and c can be zero</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Identifying Quadratic Equations</h4>
+                    <p><strong>Question:</strong> Which of the following is a quadratic equation?</p>
+                    <p><strong>Answer:</strong> <strong>x² - 55x + 750 = 0</strong></p>
+                    <p>
+                        <strong>Explanation:</strong> This is in the form ax² + bx + c = 0 where a = 1, b = -55, c = 750. 
+                        Since a ≠ 0 and the highest power of x is 2, this is a quadratic equation!
+                    </p>
+                    <p>
+                        <strong>Why the others are not:</strong>
+                    </p>
+                    <ul>
+                        <li><strong>x³ - 4x² + x = 0</strong> - This is a <strong>cubic equation</strong> because the 
+                        highest power is 3</li>
+                        <li><strong>2x - 5 = 0</strong> - This is a <strong>linear equation</strong> because there's 
+                        no x² term (highest power is 1)</li>
+                        <li><strong>1/x + 5 = x</strong> - This has 1/x (x⁻¹), which is not a polynomial equation. 
+                        While it can be transformed, the original form is not a quadratic equation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="content-block">
+                <h2>Common Mistakes to Avoid</h2>
+                
+                <div class="example-box">
+                    <h4>Mistake 1: Confusing Linear and Quadratic</h4>
+                    <p><strong>Wrong:</strong> Thinking ax + b = 0 is the standard form of a quadratic equation</p>
+                    <p><strong>Correct:</strong> ax + b = 0 is a <strong>linear equation</strong> (degree 1). A quadratic 
+                    equation must have an x² term: ax² + bx + c = 0 (degree 2).</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 2: Adding Extra Conditions</h4>
+                    <p><strong>Wrong:</strong> Thinking a, b, c must all be non-zero</p>
+                    <p><strong>Correct:</strong> Only <strong>a ≠ 0</strong> is required. b and c CAN be zero. Examples: 
+                    x² = 0 (b=c=0) and x² - 4 = 0 (b=0) are valid quadratic equations.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 3: Confusing Cubic with Quadratic</h4>
+                    <p><strong>Wrong:</strong> Thinking ax³ + bx² + cx + d = 0 is a quadratic equation</p>
+                    <p><strong>Correct:</strong> This is a <strong>cubic equation</strong> (degree 3). Quadratic means 
+                    degree 2. The name 'quad' refers to 'square' (x²), not 'four'.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 4: Not Rearranging to Standard Form</h4>
+                    <p><strong>Wrong:</strong> Trying to identify coefficients without putting the equation in standard form first</p>
+                    <p><strong>Correct:</strong> Always rearrange equations to standard form (ax² + bx + c = 0) before 
+                    identifying coefficients. For example, 4x - 3x² + 2 = 0 should be rearranged to -3x² + 4x + 2 = 0.</p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="content-block">
+                <div class="key-points">
+                    <h4>Key Points to Remember</h4>
+                    <ul>
+                        <li><strong>Standard form:</strong> ax² + bx + c = 0, where <strong>a ≠ 0</strong></li>
+                        <li>The <strong>highest power</strong> of the variable must be <strong>2</strong></li>
+                        <li><strong>a, b, c</strong> are real numbers</li>
+                        <li><strong>b and c can be zero</strong>, but <strong>a cannot</strong> (otherwise it becomes linear)</li>
+                        <li>Always <strong>rearrange equations to standard form</strong> to identify coefficients</li>
+                        <li>The term 'quadratic' comes from 'quad' meaning square (referring to x²)</li>
+                        <li>Examples:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>2x² + x - 300 = 0 (a=2, b=1, c=-300)</li>
+                                <li>x² - 45x + 324 = 0 (a=1, b=-45, c=324)</li>
+                                <li>-3x² + 4x + 2 = 0 (a=-3, b=4, c=2)</li>
+                            </ul>
+                        </li>
+                        <li>Not quadratic:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>x³ - 4x² + x = 0 (cubic, degree 3)</li>
+                                <li>2x - 5 = 0 (linear, degree 1)</li>
+                                <li>1/x + 5 = x (not a polynomial equation)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-block">
+                <h2>Summary</h2>
+                <p>
+                    Great job! You now understand what a quadratic equation is and its standard form. Here's what we've learned:
+                </p>
+                <ul>
+                    <li>A <strong>quadratic equation</strong> in variable x has the standard form: 
+                    <strong>ax² + bx + c = 0</strong></li>
+                    <li>The condition <strong>a ≠ 0</strong> is essential - if a = 0, it becomes a linear equation</li>
+                    <li>The term 'quadratic' comes from 'quad' meaning square, referring to the x² term</li>
+                    <li>The <strong>highest power</strong> of the variable must be <strong>2</strong></li>
+                    <li><strong>b and c can be zero</strong>, but a cannot</li>
+                    <li>Always <strong>rearrange equations to standard form</strong> before identifying coefficients</li>
+                    <li>Common mistakes include:
+                        <ul>
+                            <li>Confusing linear (ax + b = 0) with quadratic equations</li>
+                            <li>Thinking all coefficients must be non-zero</li>
+                            <li>Confusing cubic (degree 3) with quadratic (degree 2)</li>
+                            <li>Not rearranging to standard form first</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    <p>
+                        Understanding the standard form ax² + bx + c = 0 (where a ≠ 0) is the foundation for working 
+                        with quadratic equations. Practice identifying quadratic equations and rearranging them to standard 
+                        form to strengthen your understanding!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../notes.html">Notes</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polynomials: Introduction and Degrees - 10th Grade CBSE Notes | Outscore</title>
+    <meta name="description" content="Learn about polynomials for CBSE 10th grade. Understand what polynomials are, how to find their degrees, and identify which expressions are polynomials.">
+    <meta name="keywords" content="polynomials, degree, algebra, mathematics, 10th grade CBSE, class 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Note Page Styles */
+        .note-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .note-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .note-content-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .note-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-block {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--yellow-color);
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-block ul,
+        .content-block ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .content-block li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(45, 27, 105, 0.08);
+        }
+
+        .example-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .example-box p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .key-points h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--gradient-yellow);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 217, 61, 0.1) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .warning-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .note-title {
+                font-size: 2.25rem;
+            }
+
+            .content-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.25rem;
+            }
+
+            .content-block p,
+            .content-block ul,
+            .content-block ol {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../notes.html" class="nav-link active">Notes</a>
+                <a href="../../about.html" class="nav-link">About</a>
+                <a href="../../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../10th-grade.html">10th Grade</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Mathematics</span>
+            <span class="breadcrumb-separator">/</span>
+            <span>Polynomials</span>
+        </div>
+    </div>
+
+    <!-- Note Hero -->
+    <section class="note-hero">
+        <div class="note-container">
+            <div class="note-meta">
+                <span class="note-tag">Mathematics</span>
+                <span class="note-tag">Algebra</span>
+                <span class="note-tag">Polynomials</span>
+                <span class="note-tag">Class 10 CBSE</span>
+                <span class="note-tag">Easy</span>
+            </div>
+            <h1 class="note-title">Polynomials: Introduction and Degrees</h1>
+            <p class="note-subtitle">
+                Welcome! In this activity, we'll explore polynomials - one of the most important concepts in algebra. 
+                Let's begin with understanding what polynomials are and their degrees!
+            </p>
+        </div>
+    </section>
+
+    <!-- Note Content -->
+    <section class="note-content-section">
+        <div class="note-content">
+            <!-- What is a Polynomial -->
+            <div class="content-block">
+                <h2>What is a Polynomial?</h2>
+                <p>
+                    A <strong>polynomial in x</strong> is an expression of the form:
+                </p>
+                <div class="formula-box">
+                    <p>aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</p>
+                </div>
+                <p>
+                    Where:
+                </p>
+                <ul>
+                    <li><strong>a₀, a₁, ... aₙ</strong> are real numbers (called coefficients)</li>
+                    <li><strong>n</strong> is a non-negative integer (0, 1, 2, 3, ...)</li>
+                    <li>The variable <strong>x</strong> has only non-negative integer powers</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>
+                        Polynomials are fundamental in algebra and appear in many mathematical contexts, from 
+                        simple equations to complex mathematical models.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Degree of a Polynomial -->
+            <div class="content-block">
+                <h2>Degree of a Polynomial</h2>
+                <p>
+                    The <strong>degree of a polynomial</strong> is the <strong>highest power of the variable</strong> 
+                    in the polynomial.
+                </p>
+                <p>
+                    To find the degree:
+                </p>
+                <ol>
+                    <li>Look at all the terms in the polynomial</li>
+                    <li>Identify the power (exponent) of the variable in each term</li>
+                    <li>The <strong>largest</strong> of these powers is the degree</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>Example 1: Linear Polynomial</h4>
+                    <p><strong>Polynomial:</strong> 4x + 2</p>
+                    <p>
+                        <strong>Terms:</strong> 4x (power = 1), 2 (power = 0, constant term)<br>
+                        <strong>Highest power:</strong> 1<br>
+                        <strong>Degree:</strong> <strong>1</strong>
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Quadratic Polynomial</h4>
+                    <p><strong>Polynomial:</strong> 2y² - 3y + 4</p>
+                    <p>
+                        <strong>Terms:</strong> 2y² (power = 2), -3y (power = 1), 4 (power = 0)<br>
+                        <strong>Highest power:</strong> 2<br>
+                        <strong>Degree:</strong> <strong>2</strong>
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Cubic Polynomial</h4>
+                    <p><strong>Polynomial:</strong> 5x³ - 4x² + x - 2</p>
+                    <p>
+                        <strong>Terms:</strong> 5x³ (power = 3), -4x² (power = 2), x (power = 1), -2 (power = 0)<br>
+                        <strong>Highest power:</strong> 3<br>
+                        <strong>Degree:</strong> <strong>3</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- What is NOT a Polynomial -->
+            <div class="content-block">
+                <h2>What is NOT a Polynomial?</h2>
+                <p>
+                    <strong>Important:</strong> Not all expressions with variables are polynomials!
+                </p>
+                <div class="warning-box">
+                    <h4>Key Rule</h4>
+                    <p>
+                        In a polynomial, all powers of the variable must be <strong>non-negative integers</strong> 
+                        (0, 1, 2, 3, ...). If an expression has negative or fractional powers, it is <strong>NOT</strong> 
+                        a polynomial.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Examples of Non-Polynomials</h4>
+                    <ul>
+                        <li><strong>1/x</strong> = x⁻¹ - has a <strong>negative power</strong> (-1)</li>
+                        <li><strong>√x</strong> = x¹/² - has a <strong>fractional power</strong> (1/2)</li>
+                        <li><strong>1/(x² + 2x + 3)</strong> - has a <strong>negative power</strong> in the denominator</li>
+                        <li><strong>x + 1/x</strong> - contains x⁻¹, so it's not a polynomial</li>
+                    </ul>
+                    <p style="margin-top: var(--spacing-sm);">
+                        These expressions are valid mathematical expressions, but they are <strong>not polynomials</strong> 
+                        because they violate the rule that all powers must be non-negative integers.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Special Case: Constant Polynomials</h4>
+                    <p>
+                        A constant number like <strong>5</strong> or <strong>-3</strong> <strong>IS a polynomial</strong>! 
+                        It's called a <strong>constant polynomial</strong>.
+                    </p>
+                    <p>
+                        We can write 5 as <strong>5x⁰</strong> = 5, so it has degree <strong>0</strong>.
+                    </p>
+                    <p>
+                        Examples: 5, -3, 0, 100 are all constant polynomials with degree 0.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Free Trial CTA Section -->
+            <div class="content-block" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%); border-radius: 20px; padding: var(--spacing-xl); border: 2px solid rgba(139, 92, 246, 0.15); box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08); text-align: center; margin: var(--spacing-xl) 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Ready to Improve Your Scores?</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-md);">Start your free trial and discover exactly where you need to focus</p>
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: var(--spacing-md); padding: 1.25rem 2.5rem; background: var(--gradient-purple); color: var(--bg-white); text-decoration: none; border-radius: 14px; font-size: 1.0625rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);">Start Your Free Trial Today</a>
+            </div>
+
+            <!-- Finding Degree - More Examples -->
+            <div class="content-block">
+                <h2>Finding the Degree: More Examples</h2>
+                
+                <div class="example-box">
+                    <h4>Example: Finding Degree of 7u⁶ - 3u⁴ + 2u² - 4u + 8</h4>
+                    <p>
+                        <strong>Step 1:</strong> Identify all terms and their powers:
+                    </p>
+                    <ul>
+                        <li>7u⁶ → power = <strong>6</strong></li>
+                        <li>-3u⁴ → power = <strong>4</strong></li>
+                        <li>2u² → power = <strong>2</strong></li>
+                        <li>-4u → power = <strong>1</strong></li>
+                        <li>8 → power = <strong>0</strong> (constant term)</li>
+                    </ul>
+                    <p>
+                        <strong>Step 2:</strong> Find the highest power: <strong>6</strong>
+                    </p>
+                    <p>
+                        <strong>Answer:</strong> The degree of the polynomial is <strong>6</strong>
+                    </p>
+                    <p style="margin-top: var(--spacing-sm);">
+                        Remember: We always look for the term with the <strong>highest exponent</strong>, not the 
+                        number of terms or the value of any constant!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Identifying Polynomials -->
+            <div class="content-block">
+                <h2>Identifying Polynomials</h2>
+                <p>
+                    To identify whether an expression is a polynomial, check that all powers of the variable are 
+                    <strong>whole numbers</strong> (0, 1, 2, 3, ...).
+                </p>
+
+                <div class="example-box">
+                    <h4>Example: Which is NOT a polynomial?</h4>
+                    <p><strong>Question:</strong> Which of the following is NOT a polynomial?</p>
+                    <p><strong>Answer:</strong> <strong>x + 1/x</strong></p>
+                    <p>
+                        <strong>Explanation:</strong> The term <strong>1/x = x⁻¹</strong> has a <strong>negative exponent</strong> (-1). 
+                        In a polynomial, all exponents of variables must be non-negative integers. Therefore, 
+                        x + 1/x is not a polynomial.
+                    </p>
+                    <p>
+                        <strong>Other options are polynomials:</strong>
+                    </p>
+                    <ul>
+                        <li><strong>x³ - 4x</strong> - IS a polynomial (powers are 3 and 1)</li>
+                        <li><strong>5</strong> - IS a polynomial (constant polynomial, degree 0)</li>
+                        <li><strong>x² + 2x + 1</strong> - IS a polynomial (powers are 2, 1, and 0)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="content-block">
+                <h2>Common Mistakes to Avoid</h2>
+                
+                <div class="example-box">
+                    <h4>Mistake 1: Confusing Coefficient with Degree</h4>
+                    <p><strong>Wrong:</strong> Thinking the constant term (like 8) is the degree</p>
+                    <p><strong>Correct:</strong> The degree is the <strong>highest exponent</strong> of the variable, 
+                    not the value of any coefficient or constant. For 7u⁶ - 3u⁴ + 2u² - 4u + 8, the degree is 6 
+                    (from u⁶), not 8 (the constant).</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 2: Counting Terms Instead of Finding Highest Power</h4>
+                    <p><strong>Wrong:</strong> Thinking the number of terms determines the degree</p>
+                    <p><strong>Correct:</strong> The degree is about the <strong>highest power</strong> of the variable, 
+                    not how many terms exist. A polynomial with 5 terms can have degree 6, 2, or any number depending 
+                    on the highest exponent.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 3: Not Checking All Terms</h4>
+                    <p><strong>Wrong:</strong> Looking at only one term and assuming it's the highest</p>
+                    <p><strong>Correct:</strong> You must check <strong>every term</strong> in the polynomial to find 
+                    which has the largest exponent. Don't assume the first term has the highest power!</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 4: Thinking Constants Are Not Polynomials</h4>
+                    <p><strong>Wrong:</strong> Believing that a number like 5 is not a polynomial</p>
+                    <p><strong>Correct:</strong> A constant number <strong>IS a polynomial</strong>! It's called a constant 
+                    polynomial with degree 0. We can write 5 as 5x⁰ = 5.</p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="content-block">
+                <div class="key-points">
+                    <h4>Key Points to Remember</h4>
+                    <ul>
+                        <li>A polynomial in x has the form: <strong>aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</strong></li>
+                        <li>All powers of the variable must be <strong>non-negative integers</strong> (0, 1, 2, 3, ...)</li>
+                        <li>The <strong>degree</strong> is the <strong>highest power</strong> of the variable</li>
+                        <li>To find the degree:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>Look at all terms in the polynomial</li>
+                                <li>Identify the power of the variable in each term</li>
+                                <li>The largest power is the degree</li>
+                            </ul>
+                        </li>
+                        <li><strong>Not polynomials:</strong> Expressions with negative powers (like 1/x = x⁻¹) or fractional 
+                        powers (like √x = x¹/²)</li>
+                        <li><strong>Constant polynomials:</strong> Numbers like 5, -3 are polynomials with degree 0</li>
+                        <li>Examples:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>4x + 2 → degree 1</li>
+                                <li>2y² - 3y + 4 → degree 2</li>
+                                <li>5x³ - 4x² + x - 2 → degree 3</li>
+                                <li>7u⁶ - 3u⁴ + 2u² - 4u + 8 → degree 6</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-block">
+                <h2>Summary</h2>
+                <p>
+                    Great work! You now understand what polynomials are and how to find their degrees. Here's what we've learned:
+                </p>
+                <ul>
+                    <li>A polynomial is an expression where all powers of the variable are non-negative integers</li>
+                    <li>The general form is: aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</li>
+                    <li>The <strong>degree</strong> is the <strong>highest power</strong> of the variable in the polynomial</li>
+                    <li>To find the degree, identify all powers and find the largest one</li>
+                    <li>Expressions with negative or fractional powers (like 1/x, √x) are <strong>NOT</strong> polynomials</li>
+                    <li>Constant numbers (like 5, -3) <strong>ARE</strong> polynomials with degree 0</li>
+                    <li>Common mistakes include:
+                        <ul>
+                            <li>Confusing coefficients with degrees</li>
+                            <li>Counting terms instead of finding highest power</li>
+                            <li>Not checking all terms</li>
+                            <li>Thinking constants are not polynomials</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    <p>
+                        To identify a polynomial, check that all powers of the variable are whole numbers (0, 1, 2, 3, ...). 
+                        The degree is simply the largest of these powers. Practice identifying polynomials and finding their 
+                        degrees to strengthen your understanding!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../notes.html">Notes</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+

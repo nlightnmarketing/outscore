@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair of Linear Equations: Introduction and Forming Equations - 10th Grade CBSE Notes | Outscore</title>
+    <meta name="description" content="Learn about pair of linear equations in two variables for CBSE 10th grade. Understand how to form equations from word problems and find solutions that satisfy both equations.">
+    <meta name="keywords" content="linear equations, pair of equations, two variables, word problems, 10th grade CBSE, mathematics, class 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Note Page Styles */
+        .note-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .note-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .note-content-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .note-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-block {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--yellow-color);
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-block ul,
+        .content-block ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .content-block li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(45, 27, 105, 0.08);
+        }
+
+        .example-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .example-box p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .key-points h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--gradient-yellow);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .note-title {
+                font-size: 2.25rem;
+            }
+
+            .content-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.25rem;
+            }
+
+            .content-block p,
+            .content-block ul,
+            .content-block ol {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../notes.html" class="nav-link active">Notes</a>
+                <a href="../../about.html" class="nav-link">About</a>
+                <a href="../../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../10th-grade.html">10th Grade</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Mathematics</span>
+            <span class="breadcrumb-separator">/</span>
+            <span>Pair of Linear Equations</span>
+        </div>
+    </div>
+
+    <!-- Note Hero -->
+    <section class="note-hero">
+        <div class="note-container">
+            <div class="note-meta">
+                <span class="note-tag">Mathematics</span>
+                <span class="note-tag">Algebra</span>
+                <span class="note-tag">Pair of Linear Equations</span>
+                <span class="note-tag">Class 10 CBSE</span>
+                <span class="note-tag">Easy</span>
+            </div>
+            <h1 class="note-title">Pair of Linear Equations: Introduction and Forming Equations</h1>
+            <p class="note-subtitle">
+                Welcome! In this chapter, we'll learn how to solve problems involving two unknown quantities by forming 
+                and solving a pair of linear equations in two variables!
+            </p>
+        </div>
+    </section>
+
+    <!-- Note Content -->
+    <section class="note-content-section">
+        <div class="note-content">
+            <!-- Introduction -->
+            <div class="content-block">
+                <h2>Introduction</h2>
+                <p>
+                    Many real-world problems involve finding two unknown quantities. To solve such problems, we need 
+                    to form and solve a <strong>pair of linear equations in two variables</strong>.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        We need two equations because we have two unknowns. Each equation provides a relationship 
+                        between the two variables.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Example: Akhila's Fair -->
+            <div class="content-block">
+                <h2>Example: Forming Equations from Word Problems</h2>
+                <p>
+                    Let's understand how to form equations with a real-world example:
+                </p>
+
+                <div class="example-box">
+                    <h4>Problem: Akhila at the Fair</h4>
+                    <p>
+                        Akhila went to a fair. She had <strong>x rides</strong> on the Giant Wheel (₹3 each) and 
+                        played Hoopla <strong>y times</strong> (₹4 each). The number of Hoopla games is half the 
+                        number of rides. She spent ₹20 total.
+                    </p>
+                    <p>
+                        <strong>What information do we have?</strong>
+                    </p>
+                    <ul>
+                        <li>Cost per Giant Wheel ride: ₹3</li>
+                        <li>Cost per Hoopla game: ₹4</li>
+                        <li>Number of Hoopla games = half the number of rides</li>
+                        <li>Total amount spent: ₹20</li>
+                    </ul>
+                </div>
+
+                <h3>Forming the Equations</h3>
+                <p>
+                    We can form two equations from this problem:
+                </p>
+
+                <div class="example-box">
+                    <h4>Equation 1: Relation between rides and games</h4>
+                    <p>
+                        "The number of Hoopla games is half the number of rides"
+                    </p>
+                    <div class="formula-box">
+                        <p>y = x/2</p>
+                    </div>
+                    <p style="margin-top: var(--spacing-sm);">
+                        This can also be written as: <strong>2y = x</strong> or <strong>x - 2y = 0</strong>
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Equation 2: Total cost</h4>
+                    <p>
+                        "She spent ₹20 total"
+                    </p>
+                    <p>
+                        Cost of x rides at ₹3 each = <strong>3x</strong><br>
+                        Cost of y Hoopla games at ₹4 each = <strong>4y</strong><br>
+                        Total cost = 3x + 4y = 20
+                    </p>
+                    <div class="formula-box">
+                        <p>3x + 4y = 20</p>
+                    </div>
+                </div>
+
+                <p>
+                    Together, these two equations form a <strong>pair of linear equations in two variables</strong>:
+                </p>
+                <ul>
+                    <li>y = x/2 (or x - 2y = 0)</li>
+                    <li>3x + 4y = 20</li>
+                </ul>
+            </div>
+
+            <!-- General Form -->
+            <div class="content-block">
+                <h2>General Form of a Pair of Linear Equations</h2>
+                <p>
+                    A pair of linear equations in two variables has the general form:
+                </p>
+                <div class="formula-box">
+                    <p>a₁x + b₁y + c₁ = 0</p>
+                    <p style="margin-top: var(--spacing-sm);">a₂x + b₂y + c₂ = 0</p>
+                </div>
+                <p>
+                    Where:
+                </p>
+                <ul>
+                    <li><strong>a₁, a₂, b₁, b₂, c₁, c₂</strong> are real numbers</li>
+                    <li><strong>a₁² + b₁² ≠ 0</strong> (at least one of a₁ or b₁ is not zero)</li>
+                    <li><strong>a₂² + b₂² ≠ 0</strong> (at least one of a₂ or b₂ is not zero)</li>
+                </ul>
+                <p>
+                    The condition <strong>a₁² + b₂² ≠ 0</strong> ensures that the equation actually involves both 
+                    variables (or at least one), making it a meaningful linear equation.
+                </p>
+            </div>
+
+            <!-- What is a Solution -->
+            <div class="content-block">
+                <h2>What is a Solution?</h2>
+                <p>
+                    A <strong>SOLUTION</strong> of a pair of linear equations is an ordered pair (x, y) that satisfies 
+                    <strong>BOTH equations simultaneously</strong>.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        For a pair (x, y) to be a solution, it must make both equations true when we substitute 
+                        the values of x and y.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Verifying a Solution</h4>
+                    <p>
+                        Let's check if <strong>x = 4</strong> and <strong>y = 2</strong> is a solution to our pair 
+                        of equations from Akhila's problem:
+                    </p>
+                    <p>
+                        <strong>Equation 1:</strong> y = x/2
+                    </p>
+                    <p>
+                        Substituting x = 4, y = 2: <strong>2 = 4/2 = 2</strong> ✓
+                    </p>
+                    <p>
+                        <strong>Equation 2:</strong> 3x + 4y = 20
+                    </p>
+                    <p>
+                        Substituting x = 4, y = 2: <strong>3(4) + 4(2) = 12 + 8 = 20</strong> ✓
+                    </p>
+                    <p style="margin-top: var(--spacing-sm);">
+                        Since (4, 2) satisfies <strong>both</strong> equations, it is a solution to the pair of equations!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Free Trial CTA Section -->
+            <div class="content-block" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%); border-radius: 20px; padding: var(--spacing-xl); border: 2px solid rgba(139, 92, 246, 0.15); box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08); text-align: center; margin: var(--spacing-xl) 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Ready to Improve Your Scores?</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-md);">Start your free trial and discover exactly where you need to focus</p>
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: var(--spacing-md); padding: 1.25rem 2.5rem; background: var(--gradient-purple); color: var(--bg-white); text-decoration: none; border-radius: 14px; font-size: 1.0625rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);">Start Your Free Trial Today</a>
+            </div>
+
+            <!-- Practical Examples -->
+            <div class="content-block">
+                <h2>Understanding Through Examples</h2>
+                
+                <div class="example-box">
+                    <h4>Example 1: Forming Equations from Word Problems</h4>
+                    <p><strong>Problem:</strong> The sum of two numbers is 15 and their difference is 3. If the two numbers are x and y, which pair of equations represents this situation?</p>
+                    <p><strong>Answer:</strong> <strong>x + y = 15 and x - y = 3</strong></p>
+                    <p>
+                        <strong>Explanation:</strong> 
+                    </p>
+                    <ul>
+                        <li>"Sum is 15" means adding the numbers: <strong>x + y = 15</strong></li>
+                        <li>"Difference is 3" means subtracting: <strong>x - y = 3</strong></li>
+                    </ul>
+                    <p>
+                        These two equations form a pair of linear equations. Common mistakes include:
+                    </p>
+                    <ul>
+                        <li>Swapping the equations (x - y = 15 and x + y = 3) - wrong!</li>
+                        <li>Using product instead of difference (x + y = 15 and xy = 3) - wrong! This creates a non-linear equation</li>
+                        <li>Not understanding "sum" and "difference" correctly</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Verifying a Solution</h4>
+                    <p><strong>Problem:</strong> Is (2, 3) a solution of the pair of equations x + y = 5 and 2x - y = 1?</p>
+                    <p><strong>Answer:</strong> <strong>Yes, because it satisfies both equations</strong></p>
+                    <p>
+                        <strong>Verification:</strong>
+                    </p>
+                    <p>
+                        <strong>Equation 1:</strong> x + y = 5<br>
+                        Substituting x = 2, y = 3: <strong>2 + 3 = 5</strong> ✓
+                    </p>
+                    <p>
+                        <strong>Equation 2:</strong> 2x - y = 1<br>
+                        Substituting x = 2, y = 3: <strong>2(2) - 3 = 4 - 3 = 1</strong> ✓
+                    </p>
+                    <p style="margin-top: var(--spacing-sm);">
+                        Since (2, 3) satisfies <strong>both</strong> equations simultaneously, it is a solution. 
+                        Remember: A solution must satisfy BOTH equations, not just one!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="content-block">
+                <h2>Common Mistakes to Avoid</h2>
+                
+                <div class="example-box">
+                    <h4>Mistake 1: Confusing Sum and Difference</h4>
+                    <p><strong>Wrong:</strong> Writing x - y = 15 and x + y = 3 when the problem says "sum is 15 and difference is 3"</p>
+                    <p><strong>Correct:</strong> Sum means addition (x + y = 15) and difference means subtraction (x - y = 3). Read word problems carefully!</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 2: Confusing Difference with Product</h4>
+                    <p><strong>Wrong:</strong> Writing x + y = 15 and xy = 3 when the problem says "difference is 3"</p>
+                    <p><strong>Correct:</strong> Difference means subtraction (x - y = 3), while product means multiplication (xy). Using xy creates a non-linear equation!</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 3: Thinking One Equation is Enough</h4>
+                    <p><strong>Wrong:</strong> Believing a solution only needs to satisfy one equation</p>
+                    <p><strong>Correct:</strong> A solution must satisfy <strong>BOTH equations simultaneously</strong>. That's why we need a pair of equations!</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 4: Calculation Errors in Verification</h4>
+                    <p><strong>Wrong:</strong> Making arithmetic mistakes when substituting values</p>
+                    <p><strong>Correct:</strong> Always check your calculations carefully. For example, 2 + 3 = 5, and 2(2) - 3 = 4 - 3 = 1.</p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="content-block">
+                <div class="key-points">
+                    <h4>Key Points to Remember</h4>
+                    <ul>
+                        <li>Real-world problems can often be represented as a <strong>pair of linear equations</strong></li>
+                        <li>We need <strong>two equations</strong> because we have <strong>two unknowns</strong></li>
+                        <li>A <strong>solution</strong> must satisfy <strong>BOTH equations simultaneously</strong></li>
+                        <li>The general form of a pair of linear equations is:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>a₁x + b₁y + c₁ = 0</li>
+                                <li>a₂x + b₂y + c₂ = 0</li>
+                            </ul>
+                        </li>
+                        <li>There are several methods to solve these: <strong>graphical and algebraic</strong> methods</li>
+                        <li>When forming equations from word problems:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>Sum means addition (x + y)</li>
+                                <li>Difference means subtraction (x - y)</li>
+                                <li>Product means multiplication (xy)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-block">
+                <h2>Summary</h2>
+                <p>
+                    Great start! You now understand how to form a pair of linear equations from word problems. 
+                    Here's what we've learned:
+                </p>
+                <ul>
+                    <li>Many real-world problems involve two unknown quantities, requiring a pair of linear equations</li>
+                    <li>We need two equations because we have two unknowns - each equation provides a relationship</li>
+                    <li>The general form is: a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0</li>
+                    <li>A solution is an ordered pair (x, y) that satisfies <strong>both</strong> equations simultaneously</li>
+                    <li>When forming equations from word problems, carefully identify:
+                        <ul>
+                            <li>What the variables represent</li>
+                            <li>What relationships are given (sum, difference, product, etc.)</li>
+                            <li>How to translate words into mathematical equations</li>
+                        </ul>
+                    </li>
+                    <li>Common mistakes include confusing sum/difference/product, or thinking one equation is enough</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>
+                        Understanding how to form equations from word problems is the first step. Practice identifying 
+                        relationships and translating them into mathematical equations to strengthen your skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../notes.html">Notes</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Numbers: Understanding the Fundamental Theorem of Arithmetic - 10th Grade CBSE Notes | Outscore</title>
+    <meta name="description" content="Learn about the Fundamental Theorem of Arithmetic for CBSE 10th grade. Understand how every composite number can be uniquely expressed as a product of prime numbers.">
+    <meta name="keywords" content="real numbers, fundamental theorem of arithmetic, prime factorisation, mathematics, 10th grade CBSE, class 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Note Page Styles */
+        .note-hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 50%, #F3EDFF 100%);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .note-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.9375rem;
+        }
+
+        .breadcrumb-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-links a:hover {
+            color: var(--orange-color);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .note-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .note-content-section {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
+        }
+
+        .note-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-block {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--yellow-color);
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-block ul,
+        .content-block ol {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .content-block li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
+            border-left: 4px solid var(--orange-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(45, 27, 105, 0.08);
+        }
+
+        .example-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--orange-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .example-box p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-left: 4px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .key-points h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--purple-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--gradient-yellow);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .theorem-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .theorem-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 237, 255, 0.4) 100%);
+            border: 2px solid var(--purple-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .note-title {
+                font-size: 2.25rem;
+            }
+
+            .content-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.25rem;
+            }
+
+            .content-block p,
+            .content-block ul,
+            .content-block ol {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GPVGPFVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33GPVGPFVF');
+</script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">Outscore</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../notes.html" class="nav-link active">Notes</a>
+                <a href="../../about.html" class="nav-link">About</a>
+                <a href="../../contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-links">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../notes.html">Notes</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../10th-grade.html">10th Grade</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Mathematics</span>
+            <span class="breadcrumb-separator">/</span>
+            <span>Real Numbers</span>
+        </div>
+    </div>
+
+    <!-- Note Hero -->
+    <section class="note-hero">
+        <div class="note-container">
+            <div class="note-meta">
+                <span class="note-tag">Mathematics</span>
+                <span class="note-tag">Number Theory</span>
+                <span class="note-tag">Real Numbers</span>
+                <span class="note-tag">Class 10 CBSE</span>
+                <span class="note-tag">Medium</span>
+            </div>
+            <h1 class="note-title">Real Numbers: Understanding the Fundamental Theorem of Arithmetic</h1>
+            <p class="note-subtitle">
+                Welcome! In this activity, we'll explore one of the most important theorems in mathematics - The 
+                Fundamental Theorem of Arithmetic. Let's begin!
+            </p>
+        </div>
+    </section>
+
+    <!-- Note Content -->
+    <section class="note-content-section">
+        <div class="note-content">
+            <!-- Introduction -->
+            <div class="content-block">
+                <h2>Introduction</h2>
+                <p>
+                    The Fundamental Theorem of Arithmetic is one of the most important theorems in mathematics. It 
+                    provides the foundation for understanding how numbers can be broken down into their basic building 
+                    blocks - prime numbers.
+                </p>
+            </div>
+
+            <!-- Composite Numbers -->
+            <div class="content-block">
+                <h2>Recalling Composite Numbers</h2>
+                <p>
+                    First, let's recall: A <strong>composite number</strong> is a number that has <strong>more than 
+                    two factors</strong>.
+                </p>
+                <div class="example-box">
+                    <h4>Example: Breaking Down 12</h4>
+                    <p>
+                        <strong>12 = 2 × 2 × 3</strong>
+                    </p>
+                    <p>
+                        Notice how we broke it down into <strong>prime numbers only</strong>! The number 12 is composite 
+                        because it has factors: 1, 2, 3, 4, 6, and 12 (more than two factors).
+                    </p>
+                    <p>
+                        When we factorize 12 completely, we get: <strong>12 = 2² × 3</strong>
+                    </p>
+                </div>
+                <p>
+                    This process of breaking down a composite number into prime factors is called 
+                    <strong>prime factorisation</strong>.
+                </p>
+            </div>
+
+            <!-- The Fundamental Theorem -->
+            <div class="content-block">
+                <h2>The Fundamental Theorem of Arithmetic</h2>
+                <p>
+                    The Fundamental Theorem of Arithmetic tells us something important:
+                </p>
+                <div class="theorem-box">
+                    <h4>The Fundamental Theorem of Arithmetic</h4>
+                    <p>
+                        <strong>Every composite number can be written as a product of prime numbers, and this way of 
+                        writing it is UNIQUE (except for the order of primes).</strong>
+                    </p>
+                </div>
+                <p>
+                    This theorem has two important parts:
+                </p>
+                <ol>
+                    <li><strong>Existence:</strong> Every composite number CAN be expressed as a product of primes</li>
+                    <li><strong>Uniqueness:</strong> This expression is UNIQUE (the same primes appear, just possibly 
+                    in different order)</li>
+                </ol>
+                <div class="highlight-box">
+                    <p>
+                        The uniqueness is what makes this theorem so powerful! No matter how you factorize a composite 
+                        number, you will always get the same prime factors.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Example -->
+            <div class="content-block">
+                <h2>Understanding Through Example</h2>
+                <div class="example-box">
+                    <h4>Example: Prime Factorisation of 32760</h4>
+                    <p>
+                        <strong>32760 = 2³ × 3² × 5 × 7 × 13</strong>
+                    </p>
+                    <p>
+                        According to the Fundamental Theorem of Arithmetic:
+                    </p>
+                    <ul>
+                        <li>No matter how you factorize 32760, you will <strong>always get these same prime factors</strong></li>
+                        <li>The only thing that might differ is the <strong>order</strong> in which you write them</li>
+                        <li>For example, you could also write it as: <strong>3² × 2³ × 7 × 5 × 13</strong> (same primes, 
+                        different order)</li>
+                    </ul>
+                    <p style="margin-top: var(--spacing-sm);">
+                        This uniqueness is guaranteed by the Fundamental Theorem of Arithmetic!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Free Trial CTA Section -->
+            <div class="content-block" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%); border-radius: 20px; padding: var(--spacing-xl); border: 2px solid rgba(139, 92, 246, 0.15); box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08); text-align: center; margin: var(--spacing-xl) 0;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Ready to Improve Your Scores?</h2>
+                <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-md);">Start your free trial and discover exactly where you need to focus</p>
+                <a href="https://api.fridayi.com/api/v2/school/free-trial" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: var(--spacing-md); padding: 1.25rem 2.5rem; background: var(--gradient-purple); color: var(--bg-white); text-decoration: none; border-radius: 14px; font-size: 1.0625rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);">Start Your Free Trial Today</a>
+            </div>
+
+            <!-- More Examples -->
+            <div class="content-block">
+                <h2>More Examples</h2>
+                <div class="example-box">
+                    <h4>Example 1: 24</h4>
+                    <p>
+                        <strong>24 = 2 × 2 × 2 × 3 = 2³ × 3</strong>
+                    </p>
+                    <p>
+                        This is the unique prime factorisation. No matter how you factorize 24, you'll always get 
+                        three 2's and one 3.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: 100</h4>
+                    <p>
+                        <strong>100 = 2 × 2 × 5 × 5 = 2² × 5²</strong>
+                    </p>
+                    <p>
+                        The unique prime factorisation of 100 always contains two 2's and two 5's.
+                    </p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: 60</h4>
+                    <p>
+                        <strong>60 = 2 × 2 × 3 × 5 = 2² × 3 × 5</strong>
+                    </p>
+                    <p>
+                        You could also write it as 2² × 5 × 3 or 3 × 2² × 5 - same primes, just different order!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Understanding the Statement -->
+            <div class="content-block">
+                <h2>Understanding the Statement</h2>
+                <div class="example-box">
+                    <h4>What Does the Fundamental Theorem of Arithmetic State?</h4>
+                    <p><strong>Answer:</strong> <strong>Every composite number can be expressed as a product of primes, 
+                    and this factorisation is unique apart from the order of prime factors</strong></p>
+                    <p>
+                        <strong>Key Points:</strong>
+                    </p>
+                    <ul>
+                        <li>The theorem is about <strong>composite numbers</strong> (not prime numbers themselves)</li>
+                        <li>It's about expressing numbers as <strong>products</strong> (multiplication), not sums</li>
+                        <li>The factorisation is <strong>unique</strong> - the same primes always appear</li>
+                        <li>The only variation is the <strong>order</strong> in which primes are written</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Common Mistakes -->
+            <div class="content-block">
+                <h2>Common Mistakes to Avoid</h2>
+                
+                <div class="example-box">
+                    <h4>Mistake 1: Confusing with Goldbach's Conjecture</h4>
+                    <p><strong>Wrong:</strong> Thinking the theorem states "Every even number greater than 2 can be expressed 
+                    as sum of two primes"</p>
+                    <p><strong>Correct:</strong> That's called <strong>Goldbach's Conjecture</strong> - a famous unsolved 
+                    problem! The Fundamental Theorem of Arithmetic is about expressing numbers as <strong>PRODUCTS</strong> 
+                    of primes (multiplication), not sums (addition).</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 2: Incomplete Understanding</h4>
+                    <p><strong>Wrong:</strong> Thinking the theorem just states "Every number is either prime or composite"</p>
+                    <p><strong>Correct:</strong> While it's true that natural numbers greater than 1 are either prime or composite, 
+                    this is NOT what the Fundamental Theorem states. The theorem specifically deals with the <strong>unique 
+                    prime factorisation</strong> of composite numbers.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Mistake 3: Confusing Products with Sums</h4>
+                    <p><strong>Wrong:</strong> Thinking the theorem is about sums of primes</p>
+                    <p><strong>Correct:</strong> The Fundamental Theorem deals with <strong>multiplication</strong> (products) 
+                    of primes, not addition (sums). For example, 12 = 2 × 2 × 3 (product), not 12 = 2 + 3 + 7 (sum).</p>
+                </div>
+            </div>
+
+            <!-- Key Points -->
+            <div class="content-block">
+                <div class="key-points">
+                    <h4>Key Points to Remember</h4>
+                    <ul>
+                        <li>A <strong>composite number</strong> has more than two factors</li>
+                        <li>The Fundamental Theorem of Arithmetic = <strong>Unique Prime Factorisation</strong></li>
+                        <li><strong>Every composite number</strong> can be expressed as a product of primes</li>
+                        <li>This factorisation is <strong>UNIQUE</strong> (except for the order of primes)</li>
+                        <li>The theorem is about <strong>products</strong> (multiplication), not sums (addition)</li>
+                        <li>Examples:
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>12 = 2² × 3</li>
+                                <li>24 = 2³ × 3</li>
+                                <li>100 = 2² × 5²</li>
+                                <li>32760 = 2³ × 3² × 5 × 7 × 13</li>
+                            </ul>
+                        </li>
+                        <li>This theorem is the <strong>foundation for many concepts</strong> in number theory</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-block">
+                <h2>Summary</h2>
+                <p>
+                    Great work! You've completed this activity on the Fundamental Theorem of Arithmetic. Here's what we've learned:
+                </p>
+                <ul>
+                    <li>A <strong>composite number</strong> is a number with more than two factors</li>
+                    <li>The <strong>Fundamental Theorem of Arithmetic</strong> states that every composite number can be 
+                    expressed as a product of primes, and this factorisation is unique (except for the order of primes)</li>
+                    <li>The theorem has two parts:
+                        <ul>
+                            <li><strong>Existence:</strong> Every composite number CAN be expressed as a product of primes</li>
+                            <li><strong>Uniqueness:</strong> This expression is UNIQUE</li>
+                        </ul>
+                    </li>
+                    <li>The theorem is about <strong>products</strong> (multiplication) of primes, not sums</li>
+                    <li>Examples like 12 = 2² × 3, 24 = 2³ × 3, and 32760 = 2³ × 3² × 5 × 7 × 13 demonstrate the uniqueness</li>
+                    <li>Common mistakes include:
+                        <ul>
+                            <li>Confusing with Goldbach's Conjecture (sums vs products)</li>
+                            <li>Incomplete understanding (just knowing prime vs composite)</li>
+                            <li>Confusing products with sums</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    <p>
+                        Remember: The Fundamental Theorem of Arithmetic = Unique Prime Factorisation. This is the foundation 
+                        for many concepts in number theory and is essential for understanding how numbers work!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">Outscore</h4>
+                    <p class="footer-description">
+                        AI-powered exam prep that finds your child's weak areas first — so improvement efforts are targeted, not scattered.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../notes.html">Notes</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../terms.html">Terms & Conditions</a></li>
+                        <li><a href="../../terms.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outscore. All rights reserved. | outscore.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
