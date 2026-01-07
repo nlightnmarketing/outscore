@@ -67,23 +67,114 @@
             line-height: 1.7;
         }
 
-        /* Exam Selection Section */
-        .exam-selection-section {
+        /* Filters Section */
+        .filters-section {
+            padding: var(--spacing-lg) 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .filters-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .filters-wrapper {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            min-width: 180px;
+        }
+
+        .filter-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .filter-select:hover {
+            border-color: var(--purple-color);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--purple-color);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .clear-filters {
+            margin-left: auto;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-filters:hover {
+            background: var(--purple-color);
+            color: white;
+            border-color: var(--purple-color);
+        }
+
+        .results-count {
+            margin-top: var(--spacing-sm);
+            font-size: 0.9375rem;
+            color: var(--text-light);
+        }
+
+        /* Notes Listing Section */
+        .notes-listing-section {
             padding: var(--spacing-xl) 0;
             background: linear-gradient(180deg, #FFFFFF 0%, #FFF9E6 100%);
         }
 
-        .exam-grid {
+        .notes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: var(--spacing-lg);
             margin-top: var(--spacing-lg);
         }
 
-        .exam-card {
+        .note-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 230, 0.4) 100%);
-            border-radius: 24px;
-            padding: var(--spacing-xl);
+            border-radius: 20px;
+            padding: var(--spacing-lg);
             border: 2px solid rgba(139, 92, 246, 0.15);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 30px rgba(45, 27, 105, 0.08);
@@ -94,7 +185,7 @@
             display: block;
         }
 
-        .exam-card::before {
+        .note-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -106,75 +197,89 @@
             transition: transform 0.4s ease;
         }
 
-        .exam-card:hover {
-            transform: translateY(-12px);
+        .note-card:hover {
+            transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(45, 27, 105, 0.15);
             border-color: var(--purple-color);
             text-decoration: none;
         }
 
-        .exam-card:hover::before {
+        .note-card:hover::before {
             transform: scaleX(1);
         }
 
-        .exam-icon {
-            font-size: 4rem;
-            margin-bottom: var(--spacing-md);
-            display: block;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        .note-card.hidden {
+            display: none;
         }
 
-        .exam-name {
-            font-size: 2rem;
+        .note-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .note-tag {
+            padding: 0.375rem 0.875rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--purple-color);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .note-title {
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary-color);
             margin-bottom: var(--spacing-sm);
-            letter-spacing: -0.5px;
+            line-height: 1.3;
         }
 
-        .exam-description {
-            font-size: 1.0625rem;
-            line-height: 1.8;
+        .note-description {
+            font-size: 1rem;
+            line-height: 1.7;
             color: var(--text-light);
             margin-bottom: var(--spacing-md);
         }
 
-        .exam-features {
-            list-style: none;
-            padding: 0;
-            margin: var(--spacing-md) 0 0 0;
-        }
-
-        .exam-features li {
-            font-size: 0.9375rem;
-            color: var(--text-color);
-            padding: var(--spacing-xs) 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .exam-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--purple-color);
-            font-weight: bold;
-        }
-
-        .exam-cta {
-            margin-top: var(--spacing-md);
-            display: inline-flex;
+        .note-footer {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.5rem;
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .note-difficulty {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .note-cta {
             color: var(--orange-color);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9375rem;
             transition: all 0.3s ease;
         }
 
-        .exam-card:hover .exam-cta {
-            gap: 0.75rem;
+        .note-card:hover .note-cta {
             color: var(--purple-color);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: var(--spacing-xl);
+            color: var(--text-light);
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-color);
         }
 
         @media (max-width: 768px) {
@@ -182,8 +287,21 @@
                 font-size: 2.5rem;
             }
 
-            .exam-grid {
+            .notes-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .filters-wrapper {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            .clear-filters {
+                width: 100%;
+                margin-left: 0;
             }
         }
     </style>
@@ -229,6 +347,38 @@
         </div>
     </section>
 
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label class="filter-label" for="examFilter">Exam / Grade</label>
+                    <select id="examFilter" class="filter-select">
+                        <option value="">All Exams</option>
+                        <option value="10th Grade">10th Grade (CBSE)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="subjectFilter">Subject</label>
+                    <select id="subjectFilter" class="filter-select">
+                        <option value="">All Subjects</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="Social Science">Social Science</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="chapterFilter">Chapter</label>
+                    <select id="chapterFilter" class="filter-select">
+                        <option value="">All Chapters</option>
+                    </select>
+                </div>
+                <button class="clear-filters" id="clearFilters">Clear Filters</button>
+            </div>
+            <div class="results-count" id="resultsCount"></div>
+        </div>
+    </section>
+
     <!-- Free Trial CTA Section -->
     <section class="section section-alt">
         <div class="container">
@@ -242,30 +392,21 @@
         </div>
     </section>
 
-    <!-- Exam Selection Section -->
-    <section class="exam-selection-section">
+    <!-- Notes Listing Section -->
+    <section class="notes-listing-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Available Courses</span>
-                <h2 class="section-title">Select Your Grade</h2>
-                <p class="section-description">Choose your grade to access subject-wise notes and learning materials</p>
+                <span class="section-badge">Available Notes</span>
+                <h2 class="section-title">All Study Notes</h2>
+                <p class="section-description">Browse and filter notes by exam, subject, and chapter</p>
             </div>
-            <div class="exam-grid">
-                <a href="notes/10th-grade.html" class="exam-card">
-                    <div class="exam-icon">📚</div>
-                    <h3 class="exam-name">10th Grade (CBSE)</h3>
-                    <p class="exam-description">
-                        Comprehensive study notes for CBSE 10th grade covering Mathematics, Science, 
-                        English, and more. Detailed explanations of concepts with examples and practice insights.
-                    </p>
-                    <ul class="exam-features">
-                        <li>Mathematics concepts and problem-solving</li>
-                        <li>Science topics with detailed explanations</li>
-                        <li>English grammar and comprehension</li>
-                        <li>Exam-focused content</li>
-                    </ul>
-                    <span class="exam-cta">View Notes →</span>
-                </a>
+
+            <div class="notes-grid" id="notesGrid">
+                <!-- Notes will be populated by JavaScript -->
+            </div>
+            <div class="no-results hidden" id="noResults">
+                <h3>No notes found</h3>
+                <p>Try adjusting your filters to see more results.</p>
             </div>
         </div>
     </section>
@@ -303,7 +444,249 @@
         </div>
     </footer>
 
+    <script>
+        // Notes data
+        const notesData = [
+            {
+                title: "Arithmetic Progressions: Introduction and Definition",
+                description: "Learn what an Arithmetic Progression (AP) is, understand the concept of common difference, and explore real-life examples. This note covers the fundamental definition and properties of APs with clear explanations and examples.",
+                url: "notes/10th-grade/arithmetic-progressions-introduction.html",
+                exam: "10th Grade",
+                subject: "Mathematics",
+                chapter: "Arithmetic Progressions",
+                difficulty: "Easy",
+                tags: ["Mathematics", "Arithmetic Progressions", "Easy"]
+            },
+            {
+                title: "Pair of Linear Equations: Introduction and Forming Equations",
+                description: "Learn how to form a pair of linear equations in two variables from word problems. Understand the general form, what constitutes a solution, and practice forming equations from real-world scenarios like cost problems and number relationships.",
+                url: "notes/10th-grade/pair-linear-equations-introduction.html",
+                exam: "10th Grade",
+                subject: "Mathematics",
+                chapter: "Pair of Linear Equations",
+                difficulty: "Easy",
+                tags: ["Mathematics", "Algebra", "Pair of Linear Equations", "Easy"]
+            },
+            {
+                title: "Polynomials: Introduction and Degrees",
+                description: "Learn what polynomials are and how to find their degrees. Understand the general form of polynomials, identify which expressions are polynomials, and learn about constant polynomials. Practice finding degrees with examples.",
+                url: "notes/10th-grade/polynomials-introduction-degrees.html",
+                exam: "10th Grade",
+                subject: "Mathematics",
+                chapter: "Polynomials",
+                difficulty: "Easy",
+                tags: ["Mathematics", "Algebra", "Polynomials", "Easy"]
+            },
+            {
+                title: "Quadratic Equations: Introduction and Definition",
+                description: "Learn about quadratic equations and their standard form ax² + bx + c = 0. Understand why a ≠ 0, how to identify quadratic equations, and practice rearranging equations to standard form with examples.",
+                url: "notes/10th-grade/quadratic-equations-introduction.html",
+                exam: "10th Grade",
+                subject: "Mathematics",
+                chapter: "Quadratic Equations",
+                difficulty: "Easy",
+                tags: ["Mathematics", "Algebra", "Quadratic Equations", "Easy"]
+            },
+            {
+                title: "Real Numbers: Understanding the Fundamental Theorem of Arithmetic",
+                description: "Learn about the Fundamental Theorem of Arithmetic - one of the most important theorems in mathematics. Understand how every composite number can be uniquely expressed as a product of prime numbers, with examples and common mistakes to avoid.",
+                url: "notes/10th-grade/real-numbers-fundamental-theorem.html",
+                exam: "10th Grade",
+                subject: "Mathematics",
+                chapter: "Real Numbers",
+                difficulty: "Medium",
+                tags: ["Mathematics", "Number Theory", "Real Numbers", "Medium"]
+            },
+            {
+                title: "Acids, Bases and Salts: Introduction to Indicators",
+                description: "Learn about chemical indicators including litmus, phenolphthalein, natural indicators like turmeric and red cabbage, and olfactory indicators. Understand how to identify acids and bases safely using color changes and odour changes.",
+                url: "notes/10th-grade/acids-bases-indicators-introduction.html",
+                exam: "10th Grade",
+                subject: "Science",
+                chapter: "Acids, Bases and Salts",
+                difficulty: "Easy",
+                tags: ["Science", "Chemistry", "Acids, Bases and Salts", "Easy"]
+            },
+            {
+                title: "Carbon and its Compounds: Introduction to Covalent Bonding",
+                description: "Learn why carbon forms covalent bonds by sharing electrons. Understand carbon's electron configuration, why it doesn't form ionic bonds, and the properties of covalent compounds including melting points, conductivity, and physical states.",
+                url: "notes/10th-grade/carbon-compounds-covalent-bonding-introduction.html",
+                exam: "10th Grade",
+                subject: "Science",
+                chapter: "Carbon and its Compounds",
+                difficulty: "Easy",
+                tags: ["Science", "Chemistry", "Carbon and its Compounds", "Easy"]
+            },
+            {
+                title: "Chemical Reactions and Equations: Introduction to Chemical Reactions",
+                description: "Learn about chemical reactions and how to identify them. Understand the difference between chemical and physical changes, signs of chemical reactions, and explore examples like rusting, burning, and fermentation.",
+                url: "notes/10th-grade/chemical-reactions-introduction.html",
+                exam: "10th Grade",
+                subject: "Science",
+                chapter: "Chemical Reactions and Equations",
+                difficulty: "Easy",
+                tags: ["Science", "Chemistry", "Chemical Reactions and Equations", "Easy"]
+            },
+            {
+                title: "Introduction to Life Processes",
+                description: "Learn about the four essential life processes: nutrition, respiration, transportation, and excretion. Understand why organisms need constant maintenance, molecular movements, and how single-celled and multi-cellular organisms differ in performing these processes.",
+                url: "notes/10th-grade/life-processes-introduction.html",
+                exam: "10th Grade",
+                subject: "Science",
+                chapter: "Life Processes",
+                difficulty: "Beginner",
+                tags: ["Science", "Biology", "Life Processes", "Beginner"]
+            },
+            {
+                title: "Metals and Non-metals: Physical Properties of Metals",
+                description: "Learn about the physical properties of metals including lustre, malleability, ductility, conductivity, hardness, and sonority. Understand exceptions like mercury (liquid) and alkali metals (soft), and why metals are used in specific applications.",
+                url: "notes/10th-grade/metals-nonmetals-physical-properties.html",
+                exam: "10th Grade",
+                subject: "Science",
+                chapter: "Metals and Non-metals",
+                difficulty: "Easy",
+                tags: ["Science", "Chemistry", "Metals and Non-metals", "Easy"]
+            },
+            {
+                title: "The Making of a Global World: Introduction to the Pre-modern World",
+                description: "Learn about pre-modern globalisation and how the world became interconnected long before modern times. Understand ancient trade networks, migration patterns, and evidence of global connections from thousands of years ago including Indus Valley trade and cowries currency.",
+                url: "notes/10th-grade/making-global-world-pre-modern-introduction.html",
+                exam: "10th Grade",
+                subject: "Social Science",
+                chapter: "The Making of a Global World",
+                difficulty: "Easy",
+                tags: ["Social Science", "History", "The Making of a Global World", "Easy"]
+            },
+            {
+                title: "Nationalism in Europe: Introduction to Nationalism",
+                description: "Learn about nationalism and how it transformed 19th century Europe. Understand what nationalism is, what a nation-state is, and explore the vision of a new world. Learn key concepts like absolutism, utopian visions, and sovereignty.",
+                url: "notes/10th-grade/nationalism-europe-introduction.html",
+                exam: "10th Grade",
+                subject: "Social Science",
+                chapter: "Nationalism in Europe",
+                difficulty: "Easy",
+                tags: ["Social Science", "History", "Nationalism in Europe", "Easy"]
+            },
+            {
+                title: "Nationalism in India: Introduction to the Anti-Colonial Movement",
+                description: "Learn how Indian nationalism emerged from the anti-colonial struggle. Understand the effects of World War I, Gandhi's early satyagraha movements in Champaran, Kheda, and Ahmedabad, and the key phases of India's freedom movement.",
+                url: "notes/10th-grade/nationalism-india-introduction.html",
+                exam: "10th Grade",
+                subject: "Social Science",
+                chapter: "Nationalism in India",
+                difficulty: "Easy",
+                tags: ["Social Science", "History", "Nationalism in India", "Easy"]
+            }
+        ];
+
+        // Get unique chapters for selected subject
+        function getChaptersForSubject(subject) {
+            if (!subject) {
+                const allChapters = [...new Set(notesData.map(note => note.chapter))];
+                return allChapters.sort();
+            }
+            const chapters = [...new Set(notesData
+                .filter(note => note.subject === subject)
+                .map(note => note.chapter))];
+            return chapters.sort();
+        }
+
+        // Populate chapter filter
+        function updateChapterFilter() {
+            const subjectFilter = document.getElementById('subjectFilter');
+            const chapterFilter = document.getElementById('chapterFilter');
+            const selectedSubject = subjectFilter.value;
+            
+            const chapters = getChaptersForSubject(selectedSubject);
+            
+            chapterFilter.innerHTML = '<option value="">All Chapters</option>';
+            chapters.forEach(chapter => {
+                const option = document.createElement('option');
+                option.value = chapter;
+                option.textContent = chapter;
+                chapterFilter.appendChild(option);
+            });
+        }
+
+        // Filter notes
+        function filterNotes() {
+            const examFilter = document.getElementById('examFilter').value;
+            const subjectFilter = document.getElementById('subjectFilter').value;
+            const chapterFilter = document.getElementById('chapterFilter').value;
+            
+            const filteredNotes = notesData.filter(note => {
+                const matchExam = !examFilter || note.exam === examFilter;
+                const matchSubject = !subjectFilter || note.subject === subjectFilter;
+                const matchChapter = !chapterFilter || note.chapter === chapterFilter;
+                
+                return matchExam && matchSubject && matchChapter;
+            });
+            
+            displayNotes(filteredNotes);
+            updateResultsCount(filteredNotes.length);
+        }
+
+        // Display notes
+        function displayNotes(notes) {
+            const notesGrid = document.getElementById('notesGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (notes.length === 0) {
+                notesGrid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            notesGrid.classList.remove('hidden');
+            noResults.classList.add('hidden');
+            
+            notesGrid.innerHTML = notes.map(note => `
+                <a href="${note.url}" class="note-card">
+                    <div class="note-meta">
+                        ${note.tags.map(tag => `<span class="note-tag">${tag}</span>`).join('')}
+                    </div>
+                    <h3 class="note-title">${note.title}</h3>
+                    <p class="note-description">${note.description}</p>
+                    <div class="note-footer">
+                        <span class="note-difficulty">Difficulty: ${note.difficulty}</span>
+                        <span class="note-cta">Read More →</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // Update results count
+        function updateResultsCount(count) {
+            const resultsCount = document.getElementById('resultsCount');
+            resultsCount.textContent = `Showing ${count} ${count === 1 ? 'note' : 'notes'}`;
+        }
+
+        // Clear filters
+        function clearFilters() {
+            document.getElementById('examFilter').value = '';
+            document.getElementById('subjectFilter').value = '';
+            document.getElementById('chapterFilter').value = '';
+            updateChapterFilter();
+            filterNotes();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate initial notes
+            displayNotes(notesData);
+            updateResultsCount(notesData.length);
+            updateChapterFilter();
+            
+            // Event listeners
+            document.getElementById('examFilter').addEventListener('change', filterNotes);
+            document.getElementById('subjectFilter').addEventListener('change', function() {
+                updateChapterFilter();
+                filterNotes();
+            });
+            document.getElementById('chapterFilter').addEventListener('change', filterNotes);
+            document.getElementById('clearFilters').addEventListener('click', clearFilters);
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
-
