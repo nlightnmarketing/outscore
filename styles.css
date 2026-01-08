@@ -68,6 +68,12 @@ body {
     align-items: center;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    max-height: 50px;
+}
+
 .nav-logo a {
     font-size: 1.75rem;
     font-weight: 700;
@@ -82,9 +88,12 @@ body {
 }
 
 .logo-image {
-    height: 40px;
+    height: 32px;
+    max-height: 32px;
     width: auto;
+    max-width: 150px;
     object-fit: contain;
+    display: block;
 }
 
 .nav-menu {
