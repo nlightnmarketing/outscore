@@ -77,6 +77,14 @@ body {
     background-clip: text;
     text-decoration: none;
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-menu {
