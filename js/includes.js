@@ -46,14 +46,11 @@
             return 'contact';
         }
         // Check for partnerships pages
-        else if (filename === 'schools' || (segments.includes('partnerships') && segments.includes('schools'))) {
+        else if (filename === 'schools' || segments.includes('schools')) {
             return 'schools';
         }
-        else if (filename === 'tuition' || (segments.includes('partnerships') && segments.includes('tuition'))) {
+        else if (filename === 'tuition' || segments.includes('tuition')) {
             return 'tuition';
-        }
-        else if (segments.includes('partnerships')) {
-            return 'partnerships';
         }
         return null;
     }
