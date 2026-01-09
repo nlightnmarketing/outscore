@@ -45,6 +45,16 @@
         else if (filename === 'contact' || segments.includes('contact')) {
             return 'contact';
         }
+        // Check for partnerships pages
+        else if (filename === 'schools' || (segments.includes('partnerships') && segments.includes('schools'))) {
+            return 'schools';
+        }
+        else if (filename === 'tuition' || (segments.includes('partnerships') && segments.includes('tuition'))) {
+            return 'tuition';
+        }
+        else if (segments.includes('partnerships')) {
+            return 'partnerships';
+        }
         return null;
     }
 
@@ -136,6 +146,40 @@
                                     spans[0].style.transform = 'none';
                                     spans[1].style.opacity = '1';
                                     spans[2].style.transform = 'none';
+                                }
+                            });
+                        }
+                    });
+
+                    // Handle mobile dropdown toggle
+                    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                    dropdownToggles.forEach(toggle => {
+                        if (!toggle.hasAttribute('data-dropdown-listener')) {
+                            toggle.setAttribute('data-dropdown-listener', 'true');
+                            toggle.addEventListener('click', function(e) {
+                                if (window.innerWidth <= 768) {
+                                    e.preventDefault();
+                                    const dropdown = this.closest('.nav-dropdown');
+                                    dropdown.classList.toggle('active');
+                                }
+                            });
+                        }
+                    });
+
+                    // Close mobile menu when clicking on dropdown links
+                    const dropdownLinks = document.querySelectorAll('.dropdown-link');
+                    dropdownLinks.forEach(link => {
+                        if (!link.hasAttribute('data-close-listener')) {
+                            link.setAttribute('data-close-listener', 'true');
+                            link.addEventListener('click', function() {
+                                if (window.innerWidth <= 768 && navMenu) {
+                                    navMenu.classList.remove('active');
+                                    const spans = navToggle?.querySelectorAll('span');
+                                    if (spans) {
+                                        spans[0].style.transform = 'none';
+                                        spans[1].style.opacity = '1';
+                                        spans[2].style.transform = 'none';
+                                    }
                                 }
                             });
                         }
