@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages 404.html fallback for clean URLs
+        // This script handles routing for clean URLs by trying to load the .html version
+        
+        (function() {
+            const path = window.location.pathname;
+            const search = window.location.search;
+            const hash = window.location.hash;
+            
+            // List of known clean URL paths that should map to .html files
+            const routes = {
+                '/': '/index.html',
+                '/notes': '/notes.html',
+                '/about': '/about.html',
+                '/contact': '/contact.html',
+                '/terms': '/terms.html',
+                '/notes/10th-grade': '/notes/10th-grade.html',
+                '/notes/10th-grade/arithmetic-progressions-introduction': '/notes/10th-grade/arithmetic-progressions-introduction.html',
+                '/notes/10th-grade/pair-linear-equations-introduction': '/notes/10th-grade/pair-linear-equations-introduction.html',
+                '/notes/10th-grade/polynomials-introduction-degrees': '/notes/10th-grade/polynomials-introduction-degrees.html',
+                '/notes/10th-grade/quadratic-equations-introduction': '/notes/10th-grade/quadratic-equations-introduction.html',
+                '/notes/10th-grade/real-numbers-fundamental-theorem': '/notes/10th-grade/real-numbers-fundamental-theorem.html',
+                '/notes/10th-grade/acids-bases-indicators-introduction': '/notes/10th-grade/acids-bases-indicators-introduction.html',
+                '/notes/10th-grade/carbon-compounds-covalent-bonding-introduction': '/notes/10th-grade/carbon-compounds-covalent-bonding-introduction.html',
+                '/notes/10th-grade/chemical-reactions-introduction': '/notes/10th-grade/chemical-reactions-introduction.html',
+                '/notes/10th-grade/life-processes-introduction': '/notes/10th-grade/life-processes-introduction.html',
+                '/notes/10th-grade/metals-nonmetals-physical-properties': '/notes/10th-grade/metals-nonmetals-physical-properties.html',
+                '/notes/10th-grade/making-global-world-pre-modern-introduction': '/notes/10th-grade/making-global-world-pre-modern-introduction.html',
+                '/notes/10th-grade/nationalism-europe-introduction': '/notes/10th-grade/nationalism-europe-introduction.html',
+                '/notes/10th-grade/nationalism-india-introduction': '/notes/10th-grade/nationalism-india-introduction.html'
+            };
+            
+            // Check if we have a direct route mapping
+            if (routes[path]) {
+                window.location.replace(routes[path] + search + hash);
+                return;
+            }
+            
+            // Fallback: try adding .html extension
+            const htmlPath = path + '.html';
+            fetch(htmlPath, { method: 'HEAD' })
+                .then(function(response) {
+                    if (response.ok) {
+                        window.location.replace(htmlPath + search + hash);
+                    } else {
+                        // If .html version doesn't exist, show 404 page
+                        show404();
+                    }
+                })
+                .catch(function() {
+                    show404();
+                });
+            
+            function show404() {
+                document.body.innerHTML = `
+                    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+                        <h1>404 - Page Not Found</h1>
+                        <p>The page you're looking for doesn't exist.</p>
+                        <a href="/" style="color: #0066cc;">Go to Homepage</a>
+                    </div>
+                `;
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <p>Redirecting...</p>
+    </div>
+</body>
+</html>
+

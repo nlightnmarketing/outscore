@@ -1,0 +1,42 @@
+# Apache .htaccess for clean URLs
+# Enable rewrite engine
+RewriteEngine On
+
+# If the requested file exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# If the requested directory exists, serve index.html from it
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Root pages - rewrite clean URLs to .html files
+RewriteRule ^$ index.html [L]
+RewriteRule ^notes$ notes.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^contact$ contact.html [L]
+RewriteRule ^terms$ terms.html [L]
+
+# Notes pages
+RewriteRule ^notes/10th-grade$ notes/10th-grade.html [L]
+RewriteRule ^notes/10th-grade/arithmetic-progressions-introduction$ notes/10th-grade/arithmetic-progressions-introduction.html [L]
+RewriteRule ^notes/10th-grade/pair-linear-equations-introduction$ notes/10th-grade/pair-linear-equations-introduction.html [L]
+RewriteRule ^notes/10th-grade/polynomials-introduction-degrees$ notes/10th-grade/polynomials-introduction-degrees.html [L]
+RewriteRule ^notes/10th-grade/quadratic-equations-introduction$ notes/10th-grade/quadratic-equations-introduction.html [L]
+RewriteRule ^notes/10th-grade/real-numbers-fundamental-theorem$ notes/10th-grade/real-numbers-fundamental-theorem.html [L]
+RewriteRule ^notes/10th-grade/acids-bases-indicators-introduction$ notes/10th-grade/acids-bases-indicators-introduction.html [L]
+RewriteRule ^notes/10th-grade/carbon-compounds-covalent-bonding-introduction$ notes/10th-grade/carbon-compounds-covalent-bonding-introduction.html [L]
+RewriteRule ^notes/10th-grade/chemical-reactions-introduction$ notes/10th-grade/chemical-reactions-introduction.html [L]
+RewriteRule ^notes/10th-grade/life-processes-introduction$ notes/10th-grade/life-processes-introduction.html [L]
+RewriteRule ^notes/10th-grade/metals-nonmetals-physical-properties$ notes/10th-grade/metals-nonmetals-physical-properties.html [L]
+RewriteRule ^notes/10th-grade/making-global-world-pre-modern-introduction$ notes/10th-grade/making-global-world-pre-modern-introduction.html [L]
+RewriteRule ^notes/10th-grade/nationalism-europe-introduction$ notes/10th-grade/nationalism-europe-introduction.html [L]
+RewriteRule ^notes/10th-grade/nationalism-india-introduction$ notes/10th-grade/nationalism-india-introduction.html [L]
+
+# Fallback: try adding .html extension for any other path
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# If no file found, return 404
+RewriteRule ^ - [R=404,L]
+

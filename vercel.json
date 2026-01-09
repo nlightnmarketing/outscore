@@ -1,0 +1,85 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/notes",
+      "destination": "/notes.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/notes/10th-grade",
+      "destination": "/notes/10th-grade.html"
+    },
+    {
+      "source": "/notes/10th-grade/arithmetic-progressions-introduction",
+      "destination": "/notes/10th-grade/arithmetic-progressions-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/pair-linear-equations-introduction",
+      "destination": "/notes/10th-grade/pair-linear-equations-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/polynomials-introduction-degrees",
+      "destination": "/notes/10th-grade/polynomials-introduction-degrees.html"
+    },
+    {
+      "source": "/notes/10th-grade/quadratic-equations-introduction",
+      "destination": "/notes/10th-grade/quadratic-equations-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/real-numbers-fundamental-theorem",
+      "destination": "/notes/10th-grade/real-numbers-fundamental-theorem.html"
+    },
+    {
+      "source": "/notes/10th-grade/acids-bases-indicators-introduction",
+      "destination": "/notes/10th-grade/acids-bases-indicators-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/carbon-compounds-covalent-bonding-introduction",
+      "destination": "/notes/10th-grade/carbon-compounds-covalent-bonding-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/chemical-reactions-introduction",
+      "destination": "/notes/10th-grade/chemical-reactions-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/life-processes-introduction",
+      "destination": "/notes/10th-grade/life-processes-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/metals-nonmetals-physical-properties",
+      "destination": "/notes/10th-grade/metals-nonmetals-physical-properties.html"
+    },
+    {
+      "source": "/notes/10th-grade/making-global-world-pre-modern-introduction",
+      "destination": "/notes/10th-grade/making-global-world-pre-modern-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/nationalism-europe-introduction",
+      "destination": "/notes/10th-grade/nationalism-europe-introduction.html"
+    },
+    {
+      "source": "/notes/10th-grade/nationalism-india-introduction",
+      "destination": "/notes/10th-grade/nationalism-india-introduction.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1.html"
+    }
+  ]
+}
+

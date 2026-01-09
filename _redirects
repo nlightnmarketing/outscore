@@ -1,0 +1,29 @@
+# Netlify redirects file for clean URLs
+# Rewrite clean URLs to .html files
+
+# Root pages
+/ /index.html 200
+/notes /notes.html 200
+/about /about.html 200
+/contact /contact.html 200
+/terms /terms.html 200
+
+# Notes pages
+/notes/10th-grade /notes/10th-grade.html 200
+/notes/10th-grade/arithmetic-progressions-introduction /notes/10th-grade/arithmetic-progressions-introduction.html 200
+/notes/10th-grade/pair-linear-equations-introduction /notes/10th-grade/pair-linear-equations-introduction.html 200
+/notes/10th-grade/polynomials-introduction-degrees /notes/10th-grade/polynomials-introduction-degrees.html 200
+/notes/10th-grade/quadratic-equations-introduction /notes/10th-grade/quadratic-equations-introduction.html 200
+/notes/10th-grade/real-numbers-fundamental-theorem /notes/10th-grade/real-numbers-fundamental-theorem.html 200
+/notes/10th-grade/acids-bases-indicators-introduction /notes/10th-grade/acids-bases-indicators-introduction.html 200
+/notes/10th-grade/carbon-compounds-covalent-bonding-introduction /notes/10th-grade/carbon-compounds-covalent-bonding-introduction.html 200
+/notes/10th-grade/chemical-reactions-introduction /notes/10th-grade/chemical-reactions-introduction.html 200
+/notes/10th-grade/life-processes-introduction /notes/10th-grade/life-processes-introduction.html 200
+/notes/10th-grade/metals-nonmetals-physical-properties /notes/10th-grade/metals-nonmetals-physical-properties.html 200
+/notes/10th-grade/making-global-world-pre-modern-introduction /notes/10th-grade/making-global-world-pre-modern-introduction.html 200
+/notes/10th-grade/nationalism-europe-introduction /notes/10th-grade/nationalism-europe-introduction.html 200
+/notes/10th-grade/nationalism-india-introduction /notes/10th-grade/nationalism-india-introduction.html 200
+
+# Fallback for any other paths - try adding .html
+/* /:splat.html 200
+

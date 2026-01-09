@@ -5,16 +5,18 @@
     // Determine the root path based on current page location
     function getRootPath() {
         const path = window.location.pathname;
-        const depth = path.split('/').filter(p => p && !p.endsWith('.html')).length;
+        // Remove leading/trailing slashes and filter out empty segments
+        const segments = path.split('/').filter(p => p && !p.endsWith('.html'));
+        const depth = segments.length;
         
-        if (depth === 0) {
-            // Root level (e.g., /index.html)
+        if (depth === 0 || (depth === 1 && (segments[0] === 'index' || segments[0] === ''))) {
+            // Root level (e.g., / or /index)
             return '';
         } else if (depth === 1) {
-            // One level deep (e.g., /notes/10th-grade.html)
+            // One level deep (e.g., /notes, /about)
             return '../';
         } else if (depth >= 2) {
-            // Two or more levels deep (e.g., /notes/10th-grade/arithmetic-progressions-introduction.html)
+            // Two or more levels deep (e.g., /notes/10th-grade, /notes/10th-grade/arithmetic-progressions-introduction)
             return '../'.repeat(depth);
         }
         return '';
@@ -23,15 +25,24 @@
     // Determine which page we're on for active link
     function getCurrentPage() {
         const path = window.location.pathname;
-        const filename = path.split('/').pop() || 'index.html';
+        // Remove leading/trailing slashes and filter out empty segments
+        const segments = path.split('/').filter(p => p && !p.endsWith('.html'));
+        const filename = segments[segments.length - 1] || '';
         
-        if (filename === 'index.html' || filename === '' || path.endsWith('/')) {
+        // Check if we're at root or index page
+        if (filename === '' || filename === 'index' || path === '/' || path.endsWith('/')) {
             return 'index';
-        } else if (filename.includes('notes') || path.includes('/notes/')) {
+        } 
+        // Check if path contains /notes/ or filename is notes
+        else if (path.includes('/notes/') || filename === 'notes' || segments.includes('notes')) {
             return 'notes';
-        } else if (filename.includes('about')) {
+        } 
+        // Check for about page
+        else if (filename === 'about' || segments.includes('about')) {
             return 'about';
-        } else if (filename.includes('contact')) {
+        } 
+        // Check for contact page
+        else if (filename === 'contact' || segments.includes('contact')) {
             return 'contact';
         }
         return null;
